@@ -1,17 +1,32 @@
 {
-  "name": "",
-  "version": "",
-  "description": "",
+  "name": "bookings-module",
+  "description": "Bookings module for Airbnb website",
   "author": "",
-  "license": "",
+  "license": "ISC",
   "engines": {
     "node": ">=6.13.0"
   },
   "scripts": {
+    "serve": "nodemon server/index.js",
+    "seed": "node server/seed/index.js"
   },
   "dependencies": {
+    "express": "^4.17.1",
+    "faker": "^4.1.0",
+    "mongoose": "^5.7.4",
+    "nodemon": "^1.19.3"
   },
   "devDependencies": {
-    "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor"
-  }
+    "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor.git"
+  },
+  "version": "1.0.0",
+  "main": ".eslintrc.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/roshi-HRR/HRR41-bookings-module-service.git"
+  },
+  "bugs": {
+    "url": "https://github.com/roshi-HRR/HRR41-bookings-module-service/issues"
+  },
+  "homepage": "https://github.com/roshi-HRR/HRR41-bookings-module-service#readme"
 }
