@@ -14,7 +14,9 @@
     "express": "^4.17.1",
     "faker": "^4.1.0",
     "mongoose": "^5.7.4",
-    "nodemon": "^1.19.3"
+    "nodemon": "^1.19.3",
+    "react": "^16.10.2",
+    "react-dom": "^16.10.2"
   },
   "devDependencies": {
     "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor.git"
