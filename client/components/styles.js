@@ -9,11 +9,7 @@ const styles = {
     top: '50px',
     borderWidth: 'thin'
   },
-  flexContainer: {
-    display: 'flex',
-    flexDirection: 'column'
-  },
-  costStyleLarge: {
+  fontStyleLarge: {
     position: 'absolute',
     fontSize: '22px',
     fontFamily: 'sans-serif',
@@ -22,7 +18,7 @@ const styles = {
     paddingTop: '18px',
     color: '#484848'
   },
-  costStyleSmall:{
+  fontStyleSmall:{
     position: 'relative',
     fontSize: '12px',
     fontFamily: 'sans-serif',
@@ -31,9 +27,34 @@ const styles = {
     color: '#484848'
   },
   line:{
-    marginTop: '45px',
+    position: 'static',
+    marginTop: '60px',
     width: '80%',
     border: '.5px solid #EBEBEB'
+  },
+  position: {
+    paddingLeft: '25px',
+    paddingTop: '30px'
+  },
+  selectBox: {
+    position: 'relative',
+    width: '324px',
+    height: '40px',
+    borderStyle: 'solid',
+    borderColor: '#EBEBEB',
+    borderWidth: 'thin',
+    marginLeft: '25px',
+    marginTop: '20px'
+  },
+  arrow:{
+    fontSize: '35px',
+    textAlign: 'center'
+  },
+  selectBoxText: {
+    fontSize: '12px',
+    fontFamily: 'sans-serif',
+    fontWeight: 800,
+    color: '#484848'
   }
 }
 

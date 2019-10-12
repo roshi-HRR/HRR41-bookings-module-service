@@ -4,8 +4,7 @@ import styles from './styles.js';
 const Cost = (props) => {
   return (
     <div style={styles.flexContainer}>
-      <span style={styles.costStyleLarge}>$130<span style={styles.costStyleSmall}> per night</span></span>
-     <hr></hr>
+      <span style={styles.fontStyleLarge}>$130<span style={styles.fontStyleSmall}> per night</span></span>
     </div>
   )
 }
