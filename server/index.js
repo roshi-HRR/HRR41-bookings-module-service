@@ -9,7 +9,7 @@ const parser = require('body-parser');
 app.use(parser.json());
 
 app.get('/houses', (req, res) => {
-  models.get((err, results) => {
+  models.getHouses((err, results) => {
     res.send(results);
   })
 });
@@ -21,9 +21,20 @@ app.get('/houses/:name', (req, res) => {
 })
 
 app.post('/houses/:name', (req, res) => {
-  models.save(req.params.name, req.body.availableDates, req.body.pricePerGuest);
+  models.saveHouse(req.params.name, req.body.availableDates, req.body.pricePerGuest);
   res.end("Worked");
+})
+
+app.post('/users', (req, res) => {
+  models.saveUser(req.body.name);
+  res.end("Worked");
+});
+
+app.put('/users/:house', (req, res) => {
+  models.saveHotelToUser(req.body.name, req.params.house, req.body.totalPrice);
+  res.end("worked");
 })
 
 app.listen(port, () => {console.log(`Listening on port ${port}!`)});
 
+//changed
