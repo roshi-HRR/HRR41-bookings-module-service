@@ -20,6 +20,12 @@ app.get('/houses/:name', (req, res) => {
   })
 })
 
+app.get('/users', (req, res) => {
+  models.getUsers((err, results) => {
+    res.send(results);
+  })
+})
+
 app.post('/houses/:name', (req, res) => {
   models.saveHouse(req.params.name, req.body.availableDates, req.body.pricePerGuest);
   res.end("Worked");
