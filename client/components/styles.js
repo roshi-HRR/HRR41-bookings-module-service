@@ -40,20 +40,25 @@ const styles = {
     position: 'relative',
     width: '324px',
     height: '40px',
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-around',
     borderStyle: 'solid',
     borderColor: '#EBEBEB',
     borderWidth: 'thin',
     marginLeft: '25px',
-    marginTop: '20px'
+    marginTop: '20px',
+    paddingBottom: '10px'
   },
   arrow:{
+    display: 'block',
     fontSize: '35px',
-    textAlign: 'center'
+    textAlign: 'center',
   },
   selectBoxText: {
-    fontSize: '12px',
+    fontSize: '18px',
+    fontWeight: 50,
     fontFamily: 'sans-serif',
-    fontWeight: 800,
     color: '#484848'
   }
 }

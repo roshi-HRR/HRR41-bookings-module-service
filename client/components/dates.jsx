@@ -15,6 +15,7 @@ class Dates extends Component {
         <div style={styles.selectBox}>
             <p style={styles.selectBoxText}>Check-in</p>
             <span style={styles.arrow}>→</span>
+            <p style={styles.selectBoxText}>Check-out</p>
         </div>
       </div>
     )
