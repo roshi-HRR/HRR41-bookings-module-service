@@ -94,7 +94,43 @@
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n\n\nclass App extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {\n  constructor(props) {\n    super(props);\n  }\n\n  render() {\n    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"div\", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"p\", null, \"Hello world\"));\n  }\n\n}\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (App);\n\n//# sourceURL=webpack:///./client/components/app.jsx?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _styles_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./styles.js */ \"./client/components/styles.js\");\n/* harmony import */ var _cost_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./cost.jsx */ \"./client/components/cost.jsx\");\n/* harmony import */ var _line_jsx__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./line.jsx */ \"./client/components/line.jsx\");\n\n\n\n\n\nclass App extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {\n  constructor(props) {\n    super(props);\n  }\n\n  render() {\n    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"div\", {\n      style: _styles_js__WEBPACK_IMPORTED_MODULE_1__[\"default\"].appStyle\n    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_cost_jsx__WEBPACK_IMPORTED_MODULE_2__[\"default\"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_line_jsx__WEBPACK_IMPORTED_MODULE_3__[\"default\"], null));\n  }\n\n}\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (App);\n\n//# sourceURL=webpack:///./client/components/app.jsx?");
+
+/***/ }),
+
+/***/ "./client/components/cost.jsx":
+/*!************************************!*\
+  !*** ./client/components/cost.jsx ***!
+  \************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _styles_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./styles.js */ \"./client/components/styles.js\");\n\n\n\nconst Cost = props => {\n  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"div\", {\n    style: _styles_js__WEBPACK_IMPORTED_MODULE_1__[\"default\"].flexContainer\n  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"span\", {\n    style: _styles_js__WEBPACK_IMPORTED_MODULE_1__[\"default\"].costStyleLarge\n  }, \"$130\", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"span\", {\n    style: _styles_js__WEBPACK_IMPORTED_MODULE_1__[\"default\"].costStyleSmall\n  }, \" per night\")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"hr\", null));\n};\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (Cost);\n\n//# sourceURL=webpack:///./client/components/cost.jsx?");
+
+/***/ }),
+
+/***/ "./client/components/line.jsx":
+/*!************************************!*\
+  !*** ./client/components/line.jsx ***!
+  \************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _styles_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./styles.js */ \"./client/components/styles.js\");\n\n\n\nconst Line = props => {\n  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"hr\", {\n    style: _styles_js__WEBPACK_IMPORTED_MODULE_1__[\"default\"].line\n  });\n};\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (Line);\n\n//# sourceURL=webpack:///./client/components/line.jsx?");
+
+/***/ }),
+
+/***/ "./client/components/styles.js":
+/*!*************************************!*\
+  !*** ./client/components/styles.js ***!
+  \*************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\nconst styles = {\n  appStyle: {\n    height: '539px',\n    width: '376px',\n    borderStyle: 'solid',\n    borderColor: '#EBEBEB',\n    position: 'absolute',\n    right: '20px',\n    top: '50px',\n    borderWidth: 'thin'\n  },\n  flexContainer: {\n    display: 'flex',\n    flexDirection: 'column'\n  },\n  costStyleLarge: {\n    position: 'absolute',\n    fontSize: '22px',\n    fontFamily: 'sans-serif',\n    fontWeight: 800,\n    paddingLeft: '25px',\n    paddingTop: '18px',\n    color: '#484848'\n  },\n  costStyleSmall: {\n    position: 'relative',\n    fontSize: '12px',\n    fontFamily: 'sans-serif',\n    fontWeight: 800,\n    paddingTop: '18px',\n    color: '#484848'\n  },\n  line: {\n    marginTop: '45px',\n    width: '80%',\n    border: '.5px solid #EBEBEB'\n  }\n};\n/* harmony default export */ __webpack_exports__[\"default\"] = (styles);\n\n//# sourceURL=webpack:///./client/components/styles.js?");
 
 /***/ }),
 
