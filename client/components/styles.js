@@ -34,7 +34,7 @@ const styles = {
   },
   position: {
     paddingLeft: '25px',
-    paddingTop: '30px'
+    paddingTop: '20px'
   },
   selectBox: {
     position: 'relative',
@@ -60,6 +60,40 @@ const styles = {
     fontWeight: 50,
     fontFamily: 'sans-serif',
     color: '#484848'
+  },
+  selectBoxGuest: {
+    position: 'relative',
+    width: '324px',
+    height: '40px',
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    borderStyle: 'solid',
+    borderColor: '#EBEBEB',
+    borderWidth: 'thin',
+    marginLeft: '25px',
+    marginTop: '20px',
+    paddingBottom: '10px'
+  },
+  buttonUnpushed: {
+    position: 'relative',
+    width: '324px',
+    height: '40px',
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    borderStyle: 'solid',
+    backgroundColor: 'red',
+    marginLeft: '25px',
+    marginTop: '80px',
+    paddingBottom: '10px',
+    borderRadius: '10%'
+  },
+  buttonText: {
+    fontSize: '18px',
+    fontWeight: 50,
+    fontFamily: 'sans-serif',
+    color: 'white'
   }
 }
 

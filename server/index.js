@@ -15,8 +15,8 @@ app.get('/api/houses', (req, res) => {
   })
 });
 
-app.get('/api/houses/:name', (req, res) => {
-  models.getHouseByName(req.params.name, (err, results) => {
+app.get('/api/houses/:id', (req, res) => {
+  models.getHouseById(req.params.id, (err, results) => {
     res.send(results);
   })
 })
@@ -27,8 +27,8 @@ app.get('/api/users', (req, res) => {
   })
 })
 
-app.post('/api/houses/:name', (req, res) => {
-  models.saveHouse(req.params.name, req.body.availableDates, req.body.pricePerGuest);
+app.post('/api/houses', (req, res) => {
+  models.saveHouse(req.body.name, req.body.initialPrice, req.body.availableDates, req.body.pricePerGuest);
   res.end("Worked");
 })
 

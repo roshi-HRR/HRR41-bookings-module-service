@@ -11,7 +11,9 @@ class Dates extends Component {
   render(){
     return (
       <div>
-        <span style={{...styles.fontStyleSmall, ...styles.position}}>Dates</span>
+        <div style={styles.position}>
+          <span style={styles.fontStyleSmall}>Dates</span>
+        </div>
         <div style={styles.selectBox}>
             <p style={styles.selectBoxText}>Check-in</p>
             <span style={styles.arrow}>→</span>

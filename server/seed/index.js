@@ -18,7 +18,7 @@ let seed = () => {
     pricePerGuest['child'] = (Math.floor(Math.random() * 200) + 50);
     pricePerGuest['infant'] = Math.floor(Math.random() * 75);
 
-    models.saveHouse(name, dates, pricePerGuest);
+    models.saveHouse(name, Math.floor(Math.random()*300+100), dates, pricePerGuest);
   }
 
   for(let i=0; i<50; i++){
