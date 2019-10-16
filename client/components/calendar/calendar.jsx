@@ -71,6 +71,7 @@ class Calendar extends Component {
 
     return (
       <div style={Styles.main}>
+        <p style={Styles.monthText}>{moment().format('MMMM')}</p>
         <table>
           <tbody>
             <tr>
