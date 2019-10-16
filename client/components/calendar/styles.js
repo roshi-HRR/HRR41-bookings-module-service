@@ -16,6 +16,13 @@ const calendarStyles = {
     color: '#484848',
     userSelect: 'none'
   },
+  calendarTextGrey: {
+    fontSize: '16px',
+    fontWeight: 50,
+    fontFamily: 'sans-serif',
+    color: '#EBEBEB',
+    userSelect: 'none'
+  },
   monthText: {
     fontSize: '25px',
     fontWeight: 50,

@@ -21,8 +21,6 @@ class Dates extends Component {
     this.setState({
       toggledFirst: !this.state.toggledFirst
     })
-
-    console.log(this.state.toggledFirst);
   }
 
   toggleSecondCalendar() {
