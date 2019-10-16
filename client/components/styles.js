@@ -59,7 +59,8 @@ const styles = {
     fontSize: '18px',
     fontWeight: 50,
     fontFamily: 'sans-serif',
-    color: '#484848'
+    color: '#484848',
+    userSelect: 'none'
   },
   selectBoxGuest: {
     position: 'relative',
