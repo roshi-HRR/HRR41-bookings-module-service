@@ -7,18 +7,10 @@ class Week extends Component {
   }
 
   render(){
-    let weeksArray = ['sun', 'mon', 'tue', 'wed', 'thurs', 'fri', 'sat'];
-
     return (
-      <table>
-        <tbody>
           <tr>
-            {this.props.dates.length > 0 && this.props.dates.length <= 7 ?
-            this.props.dates.map(date => <td>{date}</td>) :
-            weeksArray.map((day, i) => <td style={Styles.calendarText} key={i}>{day}</td>)}
+            {this.props.dates.map((date, i) => <td key={i}>{date}</td>)}
           </tr>
-        </tbody>
-      </table>
     )
   }
 }
