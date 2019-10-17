@@ -11,19 +11,34 @@ app.use(express.static(__dirname + '/../public'));
 
 app.get('/api/houses', (req, res) => {
   models.getHouses((err, results) => {
-    res.send(results);
+    try{
+      res.send(results);
+    }
+    catch(err){
+      console.error(err);
+    }
   })
 });
 
 app.get('/api/houses/:id', (req, res) => {
   models.getHouseById(req.params.id, (err, results) => {
-    res.send(results);
+    try{
+      res.send(results);
+    }
+    catch(err){
+      console.error(err);
+    }
   })
 })
 
 app.get('/api/users', (req, res) => {
   models.getUsers((err, results) => {
-    res.send(results);
+    try{
+      res.send(results);
+    }
+    catch(err){
+      console.error(err);
+    }
   })
 })
 

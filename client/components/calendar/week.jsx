@@ -11,8 +11,8 @@ class Week extends Component {
   render(){
     return (
           <tr>
-            {this.props.dates.map((date, i) =>  moment().date() > date ? <td style={Styles.calendarTextGrey} >{date}</td> :
-            <td style={Styles.calendarText} >{date}</td>)}
+            {this.props.dates.map((date, i) =>  moment().date() > date ? <td key={i} style={Styles.calendarTextGrey} >{date}</td> :
+            <td key={i} style={Styles.calendarText} >{date}</td>)}
           </tr>
     )
   }

@@ -45,7 +45,7 @@ describe('Testing api endpoints', () => {
   })
 
   it('Can GET users with correct data', async () => {
-    let getResult;
+    let getResults;
     try{
       getResults = await axios.get('http://localhost:3000/api/users');
     }
@@ -59,9 +59,12 @@ describe('Testing api endpoints', () => {
   })
 
   it('Can GET a single user with correct data', async () => {
-    let getResult;
+    let getResults;
     try{
-      getResults = await axios.get('http://localhost:3000/api/users/')
+      getResults = await axios.get('http://localhost:3000/api/users')
+    }
+    catch(err){
+      console.error(err);
     }
   })
 })

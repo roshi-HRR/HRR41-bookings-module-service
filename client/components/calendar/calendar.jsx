@@ -37,7 +37,7 @@ class Calendar extends Component {
       week.push('');
     }
 
-    for(let i=1; i<8-startOfMonthDay; i++){
+    for(let i=1; i<=7-startOfMonthDay; i++){
       week.push(i);
     }
 
