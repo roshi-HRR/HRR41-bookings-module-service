@@ -24,16 +24,16 @@ class Calendar extends Component {
     this.renderWeeks(moment().month());
   }
 
-  dateRight(){
-    this.setState({
+  async dateRight(){
+    await this.setState({
       incrementMonth: this.state.incrementMonth + 1
     })
 
     this.renderWeeks(moment().month() + this.state.incrementMonth);
   }
 
-  dateLeft(){
-    this.setState({
+  async dateLeft(){
+    await this.setState({
       incrementMonth: this.state.incrementMonth - 1
     })
 
@@ -96,8 +96,8 @@ class Calendar extends Component {
             {this.state.weeks.map((week, i) => <Week key={i} dates={week}/>)}
           </tbody>
         </table>
-        <button onClick={this.dateLeft}>next</button>
-        <button onClick={this.dateRight}>previous</button>
+        <button onClick={this.dateLeft}>previous</button>
+        <button onClick={this.dateRight}>next</button>
       </div>
     )
   }
