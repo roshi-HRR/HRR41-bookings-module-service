@@ -38,6 +38,7 @@
     "enzyme-adapter-react-16": "^1.15.1",
     "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor.git",
     "jest": "^24.9.0",
+    "jsdom": "^15.2.0",
     "react-test-renderer": "^16.10.2",
     "regenerator-runtime": "^0.13.3",
     "style-loader": "^1.0.0",

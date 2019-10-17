@@ -10,25 +10,40 @@ class Calendar extends Component {
 
     this.state = {
       date: moment(),
-      weeks: []
+      weeks: [],
+      month: '',
+      incrementMonth: 0
     }
 
-    this.getDate = this.getDate.bind(this);
+    this.dateRight = this.dateRight.bind(this);
+    this.dateLeft = this.dateLeft.bind(this);
     this.renderWeeks = this.renderWeeks.bind(this);
   }
 
   componentDidMount(){
-    this.renderWeeks();
+    this.renderWeeks(moment().month());
   }
 
-  getDate() {
-      console.log(moment().month(3).daysInMonth());
+  dateRight(){
+    this.setState({
+      incrementMonth: this.state.incrementMonth + 1
+    })
+
+    this.renderWeeks(moment().month() + this.state.incrementMonth);
   }
 
-  renderWeeks() {
+  dateLeft(){
+    this.setState({
+      incrementMonth: this.state.incrementMonth - 1
+    })
+
+    this.renderWeeks(moment().month() + this.state.incrementMonth);
+  }
+
+  renderWeeks(curMonth) {
     let month = [];
-    let startOfMonthDay = moment().startOf('month').format('d');
-    let daysInMonth = moment().daysInMonth();
+    let startOfMonthDay = moment().month(curMonth).startOf('month').format('d');
+    let daysInMonth = moment().month(curMonth).daysInMonth();
 
     //create first array with appropriate amount of empty strings
     let week = [];
@@ -62,7 +77,8 @@ class Calendar extends Component {
 
     //push remaining weeks into month array
     this.setState({
-      weeks: month
+      weeks: month,
+      month: moment().month(curMonth).format('MMMM')
     })
   }
 
@@ -71,16 +87,17 @@ class Calendar extends Component {
 
     return (
       <div style={Styles.main}>
-        <p style={Styles.monthText}>{moment().format('MMMM')}</p>
+        <p style={Styles.monthText}>{this.state.month}</p>
         <table>
           <tbody>
             <tr>
               {weeksArray.map((day, i) => <td key={i} style={Styles.calendarText}>{day}</td>)}
             </tr>
-            {/* add weeks */}
             {this.state.weeks.map((week, i) => <Week key={i} dates={week}/>)}
           </tbody>
         </table>
+        <button onClick={this.dateLeft}>next</button>
+        <button onClick={this.dateRight}>previous</button>
       </div>
     )
   }
