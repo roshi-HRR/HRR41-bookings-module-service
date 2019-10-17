@@ -12,6 +12,7 @@ class Calendar extends Component {
       date: moment(),
       weeks: [],
       month: '',
+      year: moment().month(moment().month()).format('YYYY'),
       incrementMonth: 0
     }
 
@@ -29,12 +30,20 @@ class Calendar extends Component {
       incrementMonth: this.state.incrementMonth + 1
     })
 
+    await this.setState({
+      year: moment().month(moment().month() + this.state.incrementMonth).format('YYYY')
+    })
+
     this.renderWeeks(moment().month() + this.state.incrementMonth);
   }
 
   async dateLeft(){
     await this.setState({
       incrementMonth: this.state.incrementMonth - 1
+    })
+
+    await this.setState({
+      year: moment().month(moment().month() + this.state.incrementMonth).format('YYYY')
     })
 
     this.renderWeeks(moment().month() + this.state.incrementMonth);
@@ -78,7 +87,7 @@ class Calendar extends Component {
     //push remaining weeks into month array
     this.setState({
       weeks: month,
-      month: moment().month(curMonth).format('MMMM')
+      month: moment().month(curMonth).format('MMMM'),
     })
   }
 
@@ -88,6 +97,7 @@ class Calendar extends Component {
     return (
       <div style={Styles.main}>
         <p style={Styles.monthText}>{this.state.month}</p>
+        <p style={Styles.yearText}>{this.state.year}</p>
         <table>
           <tbody>
             <tr>
