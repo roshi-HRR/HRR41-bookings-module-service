@@ -103,7 +103,7 @@ class Calendar extends Component {
             <tr>
               {weeksArray.map((day, i) => <td key={i} style={Styles.calendarText}>{day}</td>)}
             </tr>
-            {this.state.weeks.map((week, i) => <Week key={i} dates={week}/>)}
+            {this.state.weeks.map((week, i) => <Week key={i} dates={week} incrementMonth={this.state.incrementMonth}/>)}
           </tbody>
         </table>
         <button onClick={this.dateLeft}>previous</button>
