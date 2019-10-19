@@ -12,8 +12,12 @@ class App extends React.Component {
     super(props);
 
     this.state = {
-      cost: 0
+      cost: 0,
+      checkIn: '',
+      checkOut: ''
     }
+
+    this.getDate = this.getDate.bind(this);
   }
 
   async componentDidMount() {
@@ -27,12 +31,36 @@ class App extends React.Component {
     })
   }
 
+  async getDate(day, month, year, calType){
+    let fixedMonth = 0;
+    let amountYears = Math.floor(month/12);
+    if(month > 12){
+      fixedMonth = month-(amountYears * 12);
+    }
+    else{
+      fixedMonth = month;
+    }
+
+    if(calType === 'check-in'){
+      await this.setState({
+        checkIn: fixedMonth + '-' + day + '-' + year
+      })
+    }
+    else if(calType === 'check-out'){
+      await this.setState({
+        checkOut: fixedMonth + '-' + day + '-' + year
+      })
+    }
+
+    console.log(this.state.checkIn);
+  }
+
   render() {
     return (
       <div style={styles.appStyle}>
         <Cost initial={this.state.cost} />
         <Line />
-        <Dates />
+        <Dates getDate={this.getDate}/>
         <Guests />
         <ReserveButton />
       </div>
