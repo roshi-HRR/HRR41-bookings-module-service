@@ -34,6 +34,7 @@ class App extends React.Component {
   async getDate(day, month, year, calType){
     let fixedMonth = 0;
     let amountYears = Math.floor(month/12);
+
     if(month > 12){
       fixedMonth = month-(amountYears * 12);
     }

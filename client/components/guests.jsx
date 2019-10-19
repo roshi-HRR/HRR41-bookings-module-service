@@ -21,13 +21,13 @@ class Guests extends Component {
 
   render() {
     return (
-      <div onClick = {this.showDropDown}>
+      <div>
         <div style={styles.position}>
           <span style={styles.fontStyleSmall}>Guests</span>
         </div>
         <div style={styles.selectBoxGuest}>
           <p style={styles.selectBoxText}>1 Guest</p>
-          <p style={styles.selectBoxText}>˅</p>
+          <p onClick = {this.showDropDown} style={styles.selectBoxText}>˅</p>
         </div>
       {this.state.toggled ? <DropDown/> : ''}
       </div>

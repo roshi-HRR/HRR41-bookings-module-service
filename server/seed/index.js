@@ -1,5 +1,6 @@
 const faker = require('faker');
 const models = require('../models/index.js');
+const generator = require('./randDay.js');
 
 let seed = () => {
   let houseArray = [];
@@ -11,7 +12,7 @@ let seed = () => {
     let pricePerGuest = {};
 
     for(let i=0; i<Math.floor(Math.random()*50+25); i++){
-      dates.push(faker.date.future().toString());
+      dates.push(generator.generateDate());
     }
 
     pricePerGuest['adult'] = (Math.floor(Math.random() * 200) + 50);
