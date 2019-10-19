@@ -18,6 +18,7 @@ class App extends React.Component {
     }
 
     this.getDate = this.getDate.bind(this);
+    this.canCheckOut = this.canCheckOut.bind(this);
   }
 
   async componentDidMount() {
@@ -29,6 +30,41 @@ class App extends React.Component {
     this.setState({
       cost: house.data[random].initialPrice
     })
+  }
+
+  canCheckOut(checkIn, checkOut){
+    let checkInArray = checkIn.split('-');
+    let monthCheckIn = checkInArray[0];
+    let dayCheckIn = checkInArray[1];
+    let yearCheckIn = checkInArray[2];
+
+    let checkOutArray = checkOut.split('-');
+    let monthCheckOut = checkOutArray[0];
+    let dayCheckOut = checkOutArray[1];
+    let yearCheckOut = checkOutArray[2];
+
+    if(yearCheckIn < yearCheckOut){
+      return true;
+    }
+    else if(yearCheckIn > yearCheckOut){
+      return false;
+    }
+    else{
+      if(monthCheckIn < monthCheckOut){
+        return true;
+      }
+      else if(monthCheckIn > monthCheckOut){
+        return false
+      }
+      else{
+        if(dayCheckIn < dayCheckOut){
+          return true;
+        }
+        else{
+          return false;
+        }
+      }
+    }
   }
 
   async getDate(day, month, year, calType){
@@ -47,13 +83,13 @@ class App extends React.Component {
         checkIn: fixedMonth + '-' + day + '-' + year
       })
     }
-    else if(calType === 'check-out'){
+    else if(calType === 'check-out' && this.canCheckOut(this.state.checkIn, fixedMonth + '-' + day + '-' + year)){
       await this.setState({
         checkOut: fixedMonth + '-' + day + '-' + year
       })
     }
 
-    console.log(this.state.checkIn);
+    console.log("check-in ", this.state.checkIn, "check-out", this.state.checkOut);
   }
 
   render() {
