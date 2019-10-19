@@ -9,15 +9,23 @@ class Week extends Component {
   }
 
   render() {
+    let getDateBlack = (i, date) => {
+      return  <td onClick={() => {this.props.getDate(date, moment().month()+1+this.props.incrementMonth,  moment().month(moment().month() + this.props.incrementMonth).format('YYYY'), this.props.calType)}} key={i} style={Styles.calendarText} >{date}</td>
+    }
+
+    let getDateGrey = (i, date) => {
+      return <td key={i} style={Styles.calendarTextGrey} >{date}</td>;
+    }
+
     return (
       <tr>
         {this.props.dates.map((date, i) => moment().date() > date && this.props.incrementMonth === 0 ?
-          <td key={i} style={Styles.calendarTextGrey} >{date}</td> :
+         getDateGrey(i, date) :
           moment().date() < date && this.props.incrementMonth === 0 ?
-            <td onClick={() => {this.props.getDate(date, moment().month()+1+this.props.incrementMonth,  moment().month(moment().month() + this.props.incrementMonth).format('YYYY'), this.props.calType)}} key={i} style={Styles.calendarText} >{date}</td> :
+           getDateBlack(i, date) :
             this.props.incrementMonth < 0 ?
-              <td key={i} style={Styles.calendarTextGrey} >{date}</td> :
-              <td onClick={() => {this.props.getDate(date, moment().month()+1 + this.props.incrementMonth, moment().month(moment().month() + this.props.incrementMonth).format('YYYY'), this.props.calType)}} key={i} style={Styles.calendarText} >{date}</td>)}
+              getDateGrey(i, date) :
+              getDateBlack(i, date))}
       </tr>
     )
   }
