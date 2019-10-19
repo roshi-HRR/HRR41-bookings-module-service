@@ -103,7 +103,7 @@ class Calendar extends Component {
             <tr>
               {weeksArray.map((day, i) => <td key={i} style={Styles.calendarText}>{day}</td>)}
             </tr>
-            {this.state.weeks.map((week, i) => <Week calType={this.props.calType} getDate={this.props.getDate} key={i} dates={week} incrementMonth={this.state.incrementMonth} />)}
+            {this.state.weeks.map((week, i) => <Week checkIn={this.props.checkIn} checkOut={this.props.checkOut} calType={this.props.calType} getDate={this.props.getDate} key={i} dates={week} incrementMonth={this.state.incrementMonth} />)}
           </tbody>
         </table>
         <button onClick={this.dateLeft}>previous</button>

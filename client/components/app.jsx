@@ -97,7 +97,7 @@ class App extends React.Component {
       <div style={styles.appStyle}>
         <Cost initial={this.state.cost} />
         <Line />
-        <Dates getDate={this.getDate}/>
+        <Dates checkIn={this.state.checkIn} checkOut={this.state.checkOut} getDate={this.getDate}/>
         <Guests />
         <ReserveButton />
       </div>

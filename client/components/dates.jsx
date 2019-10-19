@@ -37,10 +37,10 @@ class Dates extends Component {
         </div>
         <div style={styles.selectBox}>
           <p onClick={this.toggleFirstCalendar} style={styles.selectBoxText}>Check-in</p>
-          {this.state.toggledFirst ? <Calendar calType={'check-in'} getDate={this.props.getDate} /> : ''}
+          {this.state.toggledFirst ? <Calendar checkIn={this.props.checkIn} checkOut={this.props.checkOut} calType={'check-in'} getDate={this.props.getDate} /> : ''}
           <span style={styles.arrow}>→</span>
           <p onClick={this.toggleSecondCalendar} style={styles.selectBoxText}>Check-out</p>
-          {this.state.toggledSecond ? <Calendar calType={'check-out'} getDate={this.props.getDate} /> : ''}
+          {this.state.toggledSecond ? <Calendar checkIn={this.props.checkIn} checkOut={this.props.checkOut} calType={'check-out'} getDate={this.props.getDate} /> : ''}
         </div>
       </div>
     )

@@ -36,6 +36,13 @@ const calendarStyles = {
     fontFamily: 'sans-serif',
     color: '#484848',
     userSelect: 'none'
+  },
+  calendarTextRed: {
+    fontSize: '16px',
+    fontWeight: 50,
+    fontFamily: 'sans-serif',
+    color: 'red',
+    userSelect: 'none'
   }
 }
 
