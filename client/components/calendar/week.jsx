@@ -7,6 +7,32 @@ class Week extends Component {
     super(props);
 
     this.isBetween = this.isBetween.bind(this);
+    this.isGreater = this.isGreater.bind(this);
+  }
+
+  isGreater(date1, date2){
+    if(date1[2] < date2[2]){
+      return true;
+    }
+    else if(date1[2] > date2[2]){
+      return false;
+    }
+    else{
+      if(date1[0] < date2[0]){
+        return true;
+      }
+      else if(date1[0] > date2[0]){
+        return false
+      }
+      else{
+        if(date1[1] < date2[1]){
+          return true;
+        }
+        else{
+          return false;
+        }
+      }
+    }
   }
 
   isBetween(date){
@@ -14,42 +40,14 @@ class Week extends Component {
     let checkOutArray = this.props.checkOut.split('-');
     let dateArray = date.split('-');
 
-
-    let monthCheckIn = checkInArray[0];
-    let dayCheckIn = checkInArray[1];
-    let yearCheckIn = checkInArray[2];
-
-    let monthCheckOut = checkOutArray[0];
-    let dayCheckOut = checkOutArray[1];
-    let yearCheckOut = checkOutArray[2];
-
-    let monthDate = dateArray[0];
-    let dayDate = dateArray[1];
-    let yearDate = dateArray[2];
-
     //A date is in-between two dates if it is >= the check-in date and <= the check-out date
     //the count variable increments when one of these conditions is met, if the count variable reaches 2 then the date is in-between
-    //e.gg this.isBetween(10-24-2019) this.state.checkIn = 10-15-2019 this.state.checkOut = 10-30-2019
+    //e.gg this.isBetween(10-24-2019) this.state.checkIn = 10-15-2019 this.state.checkOut = 10-30-2019 [10,24,2019]
+    let checkIn = new Date(checkInArray[2], checkInArray[0]-1, checkInArray[1]);
+    let checkOut = new Date(checkOutArray[2], checkOutArray[0]-1, checkOutArray[1]);
+    let between = new Date(dateArray[2], dateArray[0]-1, dateArray[1]);
 
-    let count = 0;
-
-    if(yearCheckIn <= yearDate){
-      if(monthCheckIn <= monthDate){
-        if(dayCheckIn <= dayDate){
-          count++;
-        }
-      }
-    }
-
-    if(yearCheckOut >= yearDate){
-      if(monthCheckOut >= monthDate){
-        if(dayCheckOut >= dayDate){
-          count++
-        }
-      }
-    }
-
-    if(count === 2){
+    if(checkIn <= between && checkOut >= between){
       return true;
     }
     else{

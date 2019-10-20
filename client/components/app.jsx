@@ -43,27 +43,14 @@ class App extends React.Component {
     let dayCheckOut = checkOutArray[1];
     let yearCheckOut = checkOutArray[2];
 
-    if(yearCheckIn < yearCheckOut){
+    let checkInDate = new Date(yearCheckIn, monthCheckIn-1, dayCheckIn);
+    let checkOutDate = new Date(yearCheckOut, monthCheckOut-1, dayCheckOut);
+
+    if(checkOutDate > checkInDate){
       return true;
     }
-    else if(yearCheckIn > yearCheckOut){
-      return false;
-    }
     else{
-      if(monthCheckIn < monthCheckOut){
-        return true;
-      }
-      else if(monthCheckIn > monthCheckOut){
-        return false
-      }
-      else{
-        if(dayCheckIn < dayCheckOut){
-          return true;
-        }
-        else{
-          return false;
-        }
-      }
+      return false;
     }
   }
 

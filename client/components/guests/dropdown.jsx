@@ -65,21 +65,21 @@ class Dropdown extends Component {
       <div style = {{...Styles.mainDropDown, ...Styles.columnWrapper}}>
         <div style={Styles.rowWrapper}>
           <p style={Styles.guestText}>Adults</p>
-          <div onClick={this.increaseAdults} style={Styles.circle}>+</div>
-          <p style={Styles.guestText}>{this.state.adults}</p>
           <div onClick={this.decreaseAdults} style={Styles.circle}>-</div>
+          <p style={Styles.guestText}>{this.state.adults}</p>
+          <div onClick={this.increaseAdults} style={Styles.circle}>+</div>
         </div>
         <div style={Styles.rowWrapper}>
           <p style={Styles.guestText}>Children</p>
-          <div onClick={this.increaseChildren} style={Styles.circle}>+</div>
-          <p style={Styles.guestText}>{this.state.children}</p>
           <div onClick={this.decreaseChildren} style={Styles.circle}>-</div>
+          <p style={Styles.guestText}>{this.state.children}</p>
+          <div onClick={this.increaseChildren} style={Styles.circle}>+</div>
         </div>
         <div style={Styles.rowWrapper}>
           <p style={Styles.guestText}>Infants</p>
-          <div onClick={this.increaseInfants} style={Styles.circle}>+</div>
-          <p style={Styles.guestText}>{this.state.infants}</p>
           <div onClick={this.decreaseInfants} style={Styles.circle}>-</div>
+          <p style={Styles.guestText}>{this.state.infants}</p>
+          <div onClick={this.increaseInfants} style={Styles.circle}>+</div>
         </div>
       </div>
     )
