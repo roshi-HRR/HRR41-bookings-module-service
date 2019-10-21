@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import Styles from './styles.js';
 
 class Info extends Component {
   constructor(props){
@@ -7,12 +8,12 @@ class Info extends Component {
 
   render(){
     return (
-      <div>
-        <p>$131 X 5.6 Nights</p>
-        <p>Cleaning Fee</p>
-        <p>Service Fee</p>
-        <p>Occupancy Taxes and Fees</p>
-        <p>Total</p>
+      <div style={Styles.position}>
+        <p style={Styles.fontStyleSmall}>$131 X 5.6 Nights</p>
+        <p style={Styles.fontStyleSmall}>Cleaning Fee {this.props.cleaning}</p>
+        <p style={Styles.fontStyleSmall}>Service Fee {this.props.service}</p>
+        <p style={Styles.fontStyleSmall}>Occupancy Taxes and Fees {this.props.taxes}</p>
+        <p style={Styles.fontStyleSmall}>Total</p>
       </div>
     )
   }

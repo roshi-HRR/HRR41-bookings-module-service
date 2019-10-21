@@ -16,7 +16,10 @@ class App extends React.Component {
       cost: 0,
       checkIn: '',
       checkOut: '',
-      unavailableDates: []
+      unavailableDates: [],
+      cleaning: null,
+      service: null,
+      taxes: null
     }
 
     this.getDate = this.getDate.bind(this);
@@ -31,7 +34,10 @@ class App extends React.Component {
 
     this.setState({
       cost: house.data[random].initialPrice,
-      unavailableDates: house.data[random].unavailable_dates
+      unavailableDates: house.data[random].unavailable_dates,
+      cleaning: house.data[random].cleaning,
+      service: house.data[random].service,
+      taxes: house.data[random].taxes
     });
   }
 
@@ -90,6 +96,7 @@ class App extends React.Component {
         <Dates unavailableDates={this.state.unavailableDates} checkIn={this.state.checkIn} checkOut={this.state.checkOut} getDate={this.getDate}/>
         <Guests />
         <Line/>
+        {this.state.checkIn !== '' && this.state.checkOut !== '' ? <Info cleaning={this.state.cleaning} service={this.state.service} taxes={this.state.taxes}/> : ''}
         <ReserveButton />
       </div>
     )

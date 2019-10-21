@@ -57,7 +57,6 @@ class Week extends Component {
         continue;
       }
     }
-    console.log(newDate, false);
     return false;
   }
 

@@ -43,7 +43,7 @@ app.get('/api/users', (req, res) => {
 })
 
 app.post('/api/houses', (req, res) => {
-  models.saveHouse(req.body.name, req.body.initialPrice, req.body.availableDates, req.body.pricePerGuest);
+  models.saveHouse(req.body.name, req.body.initialPrice, req.body.cleaning, req.body.service, req.body.taxes, req.body.availableDates, req.body.pricePerGuest);
   res.end("Worked");
 })
 
