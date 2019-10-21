@@ -47,18 +47,17 @@ class Week extends Component {
     }
     else{
       newDate = dateArray[0]-12 + '-' + dateArray[1] + '-' + dateArray[2];
-      console.log(newDate);
     }
 
-    console.log(this.props.unavailableDates);
     for(let i=0; i<this.props.unavailableDates.length; i++){
-      if(date == this.props.unavailableDates[i]){
+      if(newDate === this.props.unavailableDates[i]){
         return true;
       }
       else{
         continue;
       }
     }
+    console.log(newDate, false);
     return false;
   }
 
