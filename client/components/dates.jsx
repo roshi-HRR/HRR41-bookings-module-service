@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import styles from './styles.js';
+import './css/app.css';
 import Calendar from './calendar/calendar.jsx';
 
 class Dates extends Component {
@@ -42,13 +42,13 @@ class Dates extends Component {
   render() {
     return (
       <div>
-        <div style={styles.position}>
-          <span style={styles.fontStyleSmall}>Dates</span>
+        <div className="position">
+          <span className="font-style-small">Dates</span>
         </div>
-        <div style={styles.selectBox}>
-          <p onClick={this.toggleFirstCalendar} style={styles.selectBoxText}>{this.props.checkIn === '' ? 'Check-in' : this.props.checkIn}</p>
-          <span style={styles.arrow}>→</span>
-          <p onClick={this.toggleSecondCalendar} style={styles.selectBoxText}>{this.props.checkOut === '' ? 'Checkout' : this.props.checkOut}</p>
+        <div className="select-box">
+          <p onClick={this.toggleFirstCalendar} className="select-box-text">{this.props.checkIn === '' ? 'Check-in' : this.props.checkIn}</p>
+          <span className="arrow">→</span>
+          <p onClick={this.toggleSecondCalendar} className="select-box-text">{this.props.checkOut === '' ? 'Checkout' : this.props.checkOut}</p>
         </div>
           <div style={{position: 'absolute', left: '27px'}}>
             {this.state.toggledFirst ? <Calendar unavailableDates={this.props.unavailableDates} checkIn={this.props.checkIn} checkOut={this.props.checkOut} calType={'check-in'} getDate={this.props.getDate} /> : ''}

@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-import styles from './styles.js';
+import './css/app.css';
 import Cost from './cost.jsx';
 import Line from './line.jsx';
 import Dates from './dates.jsx';
@@ -98,7 +98,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <div style={styles.appStyle}>
+      <div className="app-style">
         <Cost initial={this.state.cost} />
         <Line />
         <Dates unavailableDates={this.state.unavailableDates} checkIn={this.state.checkIn} checkOut={this.state.checkOut} getDate={this.getDate}/>

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import styles from './styles.js';
+import './css/app.css';
 import DropDown from './guests/dropdown.jsx';
 
 class Guests extends Component {
@@ -78,12 +78,12 @@ class Guests extends Component {
   render() {
     return (
       <div>
-        <div style={styles.position}>
-          <span style={styles.fontStyleSmall}>Guests</span>
+        <div className="position">
+          <span className="font-style-small">Guests</span>
         </div>
-        <div onClick={this.showDropDown} style={styles.selectBoxGuest}>
-          <p style={styles.selectBoxText}>{this.getTotal()} {this.getTotal() > 1 ? 'guests' : 'guest'}</p>
-          <p style={styles.selectBoxText}>{this.state.toggled ? 'Λ' : 'V'}</p>
+        <div onClick={this.showDropDown} className="select-box-guest">
+          <p className="select-box-text">{this.getTotal()} {this.getTotal() > 1 ? 'guests' : 'guest'}</p>
+          <p className="select-box-text">{this.state.toggled ? 'Λ' : 'V'}</p>
         </div>
       {this.state.toggled ? <DropDown
         increaseAdults={this.increaseAdults}

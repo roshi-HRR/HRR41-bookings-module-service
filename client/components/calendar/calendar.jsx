@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import Styles from './styles.js';
 import moment from 'moment';
+import '../css/calendar.css';
 
 import Week from './week.jsx';
 
@@ -95,13 +95,13 @@ class Calendar extends Component {
     let weeksArray = ['sun', 'mon', 'tue', 'wed', 'thurs', 'fri', 'sat'];
 
     return (
-      <div style={Styles.main}>
-        <p style={Styles.monthText}>{this.state.month}</p>
-        <p style={Styles.yearText}>{this.state.year}</p>
+      <div className="main">
+        <p className="month-text">{this.state.month}</p>
+        <p className="year-text">{this.state.year}</p>
         <table>
           <tbody>
             <tr>
-              {weeksArray.map((day, i) => <td key={i} style={Styles.calendarText}>{day}</td>)}
+              {weeksArray.map((day, i) => <td key={i} className="calendar-text">{day}</td>)}
             </tr>
             {this.state.weeks.map((week, i) => <Week unavailableDates={this.props.unavailableDates} checkIn={this.props.checkIn} checkOut={this.props.checkOut} calType={this.props.calType} getDate={this.props.getDate} key={i} dates={week} incrementMonth={this.state.incrementMonth} />)}
           </tbody>

@@ -1,0 +1,45 @@
+  .main {
+    height: 300px;
+    width: 225px;
+    border-style: solid;
+    border-color: #EBEBEB;
+    background-color: white;
+    position: absolute;
+    border-width: thin;
+    z-index: 3;
+  }
+  .calendar-text {
+    font-size: 16px;
+    font-weight: 50;
+    font-family: sans-serif;
+    color: #484848;
+    user-select: none;
+  }
+  .calendar-text-grey {
+    font-size: 16px;
+    font-weight: 50;
+    font-family: 'sans-serif';
+    color: #EBEBEB;
+    user-select: 'none';
+  }
+  .month-text {
+    font-size: 25px;
+    font-weight: 50;
+    font-family: sans-serif;
+    color: #484848;
+    user-select: none;
+  }
+  .year-text {
+    font-size: 18px;
+    font-weight: 50;
+    font-family: sans-serif;
+    color: #484848;
+    user-select: none;
+  }
+  .calendar-text-red {
+    font-size: 16px;
+    font-weight: 50;
+    font-family: sans-serif;
+    color: red;
+    user-select: none;
+  }

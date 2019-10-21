@@ -1,10 +1,10 @@
 import React from 'react';
-import styles from './styles.js';
+import './css/app.css';
 
 const Cost = (props) => {
   return (
-    <div style={styles.flexContainer}>
-      <span style={styles.fontStyleLarge}>${props.initial}<span style={styles.fontStyleSmall}> per night</span></span>
+    <div className="flex-container">
+      <span className="font-style-large">${props.initial}<span className="font-style-small"> per night</span></span>
     </div>
   )
 }

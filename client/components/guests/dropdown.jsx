@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import Styles from './styles.js';
+import '../css/guests.css';
 
 class Dropdown extends Component {
   constructor(props){
@@ -14,24 +14,24 @@ class Dropdown extends Component {
 
   render() {
     return (
-      <div style = {{...Styles.mainDropDown, ...Styles.columnWrapper}}>
-        <div style={Styles.rowWrapper}>
-          <p style={Styles.guestText}>Adults</p>
-          <div onClick={this.props.decreaseAdults} style={Styles.circle}>-</div>
-          <p style={Styles.guestText}>{this.props.adults}</p>
-          <div onClick={this.props.increaseAdults} style={Styles.circle}>+</div>
+      <div className="main-drop-down column-wrapper">
+        <div className="row-wrapper">
+          <p className="guest-text">Adults</p>
+          <div onClick={this.props.decreaseAdults} className="circle">-</div>
+          <p className="guest-text">{this.props.adults}</p>
+          <div onClick={this.props.increaseAdults} className="circle">+</div>
         </div>
-        <div style={Styles.rowWrapper}>
-          <p style={Styles.guestText}>Children</p>
-          <div onClick={this.props.decreaseChildren} style={Styles.circle}>-</div>
-          <p style={Styles.guestText}>{this.props.children}</p>
-          <div onClick={this.props.increaseChildren} style={Styles.circle}>+</div>
+        <div className="row-wrapper">
+          <p className="guest-text">Children</p>
+          <div onClick={this.props.decreaseChildren} className="circle">-</div>
+          <p className="guest-text">{this.props.children}</p>
+          <div onClick={this.props.increaseChildren} className="circle">+</div>
         </div>
-        <div style={Styles.rowWrapper}>
-          <p style={Styles.guestText}>Infants</p>
-          <div onClick={this.props.decreaseInfants} style={Styles.circle}>-</div>
-          <p style={Styles.guestText}>{this.props.infants}</p>
-          <div onClick={this.props.increaseInfants} style={Styles.circle}>+</div>
+        <div className="row-wrapper">
+          <p className="guest-text">Infants</p>
+          <div onClick={this.props.decreaseInfants} className="circle">-</div>
+          <p className="guest-text">{this.props.infants}</p>
+          <div onClick={this.props.increaseInfants} className="circle">+</div>
         </div>
       </div>
     )

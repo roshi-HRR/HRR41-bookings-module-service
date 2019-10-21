@@ -1,0 +1,42 @@
+  .main-drop-down {
+    height: 300px;
+    width: 324px;
+    border-style: solid;
+    border-color: #EBEBEB;
+    background-color: white;
+    position: relative;
+    border-width: thin;
+    margin-left: 25px;
+    z-index: 3;
+  }
+  .column-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+  .row-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  .guest-text {
+    font-size: 16px;
+    font-weight: 50;
+    font-family: sans-serif;
+    color: #484848;
+    user-select: none;
+    margin-left: 10px;
+  }
+  .circle {
+    border-style: solid;
+    border-radius: 50%;
+    height: 20px;
+    width: 20px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 50;
+    font-family: sans-serif;
+    color: #484848;
+    user-select: none;
+    margin-left: 10px;
+  }

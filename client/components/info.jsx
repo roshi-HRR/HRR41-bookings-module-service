@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import Styles from './styles.js';
+import './css/app.css';
 import Line from './line.jsx';
 
 class Info extends Component {
@@ -25,26 +25,26 @@ class Info extends Component {
 
   render(){
     return (
-      <div style={Styles.position}>
-        <div style={Styles.row}>
-          <p style={Styles.fontStyleSmall}>${this.props.initial} X {this.datesBetween()} Nights</p>
-          <p style={Styles.fontStyleSmall}>${this.props.initial * this.datesBetween()}</p>
+      <div className="position">
+        <div className="row">
+          <p className="font-style-small">${this.props.initial} X {this.datesBetween()} Nights</p>
+          <p className="font-style-small">${this.props.initial * this.datesBetween()}</p>
         </div>
-        <div style={Styles.row}>
-          <p style={Styles.fontStyleSmall}>Cleaning Fee</p>
-          <p style={Styles.fontStyleSmall}>${this.props.cleaning}</p>
+        <div className="row">
+          <p className="font-style-small">Cleaning Fee</p>
+          <p className="font-style-small">${this.props.cleaning}</p>
         </div>
-        <div style={Styles.row}>
-          <p style={Styles.fontStyleSmall}>Service Fee</p>
-          <p style={Styles.fontStyleSmall}>${this.props.service}</p>
+        <div className="row">
+          <p className="font-style-small">Service Fee</p>
+          <p className="font-style-small">${this.props.service}</p>
         </div>
-        <div style={Styles.row}>
-          <p style={Styles.fontStyleSmall}>Occupancy Taxes and Fees</p>
-          <p style={Styles.fontStyleSmall}>${this.props.taxes}</p>
+        <div className="row">
+          <p className="font-style-small">Occupancy Taxes and Fees</p>
+          <p className="font-style-small">${this.props.taxes}</p>
         </div>
-        <div style={Styles.row}>
-          <p style={Styles.fontStyleSmall}>Total</p>
-          <p style={Styles.fontStyleSmall}>${this.props.initial * this.datesBetween() + this.props.service + this.props.cleaning + this.props.taxes}</p>
+        <div className="row">
+          <p className="font-style-small">Total</p>
+          <p className="font-style-small">${this.props.initial * this.datesBetween() + this.props.service + this.props.cleaning + this.props.taxes}</p>
         </div>
       </div>
     )

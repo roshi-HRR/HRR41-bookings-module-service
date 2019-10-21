@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import styles from './styles.js';
+import './css/app.css';
 
 class ReserveButton extends Component {
   constructor(props) {
@@ -8,8 +8,8 @@ class ReserveButton extends Component {
 
   render() {
     return (
-      <div style={styles.buttonUnpushed}>
-        <p style={styles.buttonText}>Reserve</p>
+      <div className="button-unpushed">
+        <p className="button-text">Reserve</p>
       </div>
     )
   }
