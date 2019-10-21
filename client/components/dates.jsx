@@ -53,7 +53,7 @@ class Dates extends Component {
           <div style={{position: 'absolute', left: '27px'}}>
             {this.state.toggledFirst ? <Calendar unavailableDates={this.props.unavailableDates} checkIn={this.props.checkIn} checkOut={this.props.checkOut} calType={'check-in'} getDate={this.props.getDate} /> : ''}
           </div>
-          <div style={{position: 'absolute', left: '123px'}}>
+          <div style={{position: 'absolute', left: '27px'}}>
           {this.state.toggledSecond ? <Calendar unavailableDates={this.props.unavailableDates} checkIn={this.props.checkIn} checkOut={this.props.checkOut} calType={'check-out'} getDate={this.props.getDate} /> : ''}
           </div>
       </div>

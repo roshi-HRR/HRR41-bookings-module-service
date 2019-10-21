@@ -92,13 +92,12 @@ class Calendar extends Component {
   }
 
   render() {
-    let weeksArray = ['sun', 'mon', 'tue', 'wed', 'thurs', 'fri', 'sat'];
+    let weeksArray = ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'];
 
     return (
       <div className="main">
-        <p className="month-text">{this.state.month}</p>
-        <p className="year-text">{this.state.year}</p>
-        <table>
+        <p className="month-text">{this.state.month} {this.state.year}</p>
+        <table className="table">
           <tbody>
             <tr>
               {weeksArray.map((day, i) => <td key={i} className="calendar-text">{day}</td>)}

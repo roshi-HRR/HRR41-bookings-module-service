@@ -1,26 +1,44 @@
   .main {
-    height: 300px;
-    width: 225px;
+    height: 354px;
+    width: 327px;
     border-style: solid;
     border-color: #EBEBEB;
     background-color: white;
     position: absolute;
     border-width: thin;
-    z-index: 3;
+    z-index: 4;
   }
   .calendar-text {
-    font-size: 16px;
-    font-weight: 50;
-    font-family: sans-serif;
-    color: #484848;
-    user-select: none;
-  }
+    box-sizing: border-box !important;
+    cursor: pointer !important;
+    font-size: 14px !important;
+    text-align: center !important;
+    width: 41px;
+    height: 40px;
+    border: 1px solid rgb(228, 231, 231);
+    color: rgb(72, 72, 72);
+    background: rgb(255, 255, 255);
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif !important;
+    font-weight: 700 !important;
+    line-height: 12px !important;
+    font-size: 14px !important;
+    color: rgb(72, 72, 72) !important;
+}
   .calendar-text-grey {
-    font-size: 16px;
-    font-weight: 50;
-    font-family: 'sans-serif';
-    color: #EBEBEB;
-    user-select: 'none';
+      box-sizing: border-box !important;
+      font-size: 14px !important;
+      text-align: center !important;
+      cursor: default !important;
+      width: 41px;
+      height: 40px;
+      border: 1px double rgb(228, 231, 231);
+      color: rgb(0, 0, 0);
+      background: rgb(255, 255, 255);
+      font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif !important;
+      font-weight: 700 !important;
+      line-height: 12px !important;
+      font-size: 14px !important;
+      color: rgb(216, 216, 216) !important;
   }
   .month-text {
     font-size: 25px;
@@ -37,9 +55,25 @@
     user-select: none;
   }
   .calendar-text-red {
-    font-size: 16px;
-    font-weight: 50;
-    font-family: sans-serif;
-    color: red;
-    user-select: none;
+      box-sizing: border-box !important;
+      cursor: pointer !important;
+      font-size: 14px !important;
+      text-align: center !important;
+      width: 41px;
+      height: 40px;
+      border: 1px double rgb(0, 166, 153);
+      color: rgb(0, 0, 0);
+      background: rgb(0, 166, 153);
+      font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif !important;
+      font-weight: 700 !important;
+      line-height: 12px !important;
+      font-size: 14px !important;
+      color: rgb(255, 255, 255) !important;
+  }
+
+  .table {
+      border-collapse: collapse !important;
+      border-spacing: 0px !important;
+      -webkit-border-horizontal-spacing: 0px !important;
+      -webkit-border-vertical-spacing: 0px !important;
   }
