@@ -20,7 +20,7 @@ class Info extends Component {
 
     let days = difference / (1000*3600*24);
 
-    return days;
+    return Math.floor(days);
   }
 
   render(){
