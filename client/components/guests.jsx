@@ -76,9 +76,9 @@ class Guests extends Component {
         <div style={styles.position}>
           <span style={styles.fontStyleSmall}>Guests</span>
         </div>
-        <div style={styles.selectBoxGuest}>
+        <div onClick={this.showDropDown} style={styles.selectBoxGuest}>
           <p style={styles.selectBoxText}>1 Guest</p>
-          <p onClick = {this.showDropDown} style={styles.selectBoxText}>˅</p>
+          <p style={styles.selectBoxText}>˅</p>
         </div>
       {this.state.toggled ? <DropDown
         increaseAdults={this.increaseAdults}

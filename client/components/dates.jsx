@@ -18,12 +18,22 @@ class Dates extends Component {
   //can use spread operator to use more than one style
 
   toggleFirstCalendar() {
+    if(this.state.toggledSecond === true){
+      this.setState({
+        toggledSecond: false
+      })
+    }
     this.setState({
       toggledFirst: !this.state.toggledFirst
     })
   }
 
   toggleSecondCalendar() {
+    if(this.state.toggledFirst === true){
+      this.setState({
+        toggledFirst: false
+      })
+    }
     this.setState({
       toggledSecond: !this.state.toggledSecond
     })
@@ -37,11 +47,15 @@ class Dates extends Component {
         </div>
         <div style={styles.selectBox}>
           <p onClick={this.toggleFirstCalendar} style={styles.selectBoxText}>Check-in</p>
-          {this.state.toggledFirst ? <Calendar checkIn={this.props.checkIn} checkOut={this.props.checkOut} calType={'check-in'} getDate={this.props.getDate} /> : ''}
           <span style={styles.arrow}>→</span>
           <p onClick={this.toggleSecondCalendar} style={styles.selectBoxText}>Check-out</p>
-          {this.state.toggledSecond ? <Calendar checkIn={this.props.checkIn} checkOut={this.props.checkOut} calType={'check-out'} getDate={this.props.getDate} /> : ''}
         </div>
+          <div style={{position: 'absolute', left: '27px'}}>
+            {this.state.toggledFirst ? <Calendar checkIn={this.props.checkIn} checkOut={this.props.checkOut} calType={'check-in'} getDate={this.props.getDate} /> : ''}
+          </div>
+          <div style={{position: 'absolute', left: '123px'}}>
+          {this.state.toggledSecond ? <Calendar checkIn={this.props.checkIn} checkOut={this.props.checkOut} calType={'check-out'} getDate={this.props.getDate} /> : ''}
+          </div>
       </div>
     )
   }
