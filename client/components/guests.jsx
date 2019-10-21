@@ -83,7 +83,7 @@ class Guests extends Component {
         </div>
         <div onClick={this.showDropDown} style={styles.selectBoxGuest}>
           <p style={styles.selectBoxText}>{this.getTotal()} {this.getTotal() > 1 ? 'guests' : 'guest'}</p>
-          <p style={styles.selectBoxText}>˅</p>
+          <p style={styles.selectBoxText}>{this.state.toggled ? 'Λ' : 'V'}</p>
         </div>
       {this.state.toggled ? <DropDown
         increaseAdults={this.increaseAdults}

@@ -7,32 +7,6 @@ class Week extends Component {
     super(props);
 
     this.isBetween = this.isBetween.bind(this);
-    this.isGreater = this.isGreater.bind(this);
-  }
-
-  isGreater(date1, date2){
-    if(date1[2] < date2[2]){
-      return true;
-    }
-    else if(date1[2] > date2[2]){
-      return false;
-    }
-    else{
-      if(date1[0] < date2[0]){
-        return true;
-      }
-      else if(date1[0] > date2[0]){
-        return false
-      }
-      else{
-        if(date1[1] < date2[1]){
-          return true;
-        }
-        else{
-          return false;
-        }
-      }
-    }
   }
 
   isBetween(date){
@@ -45,7 +19,15 @@ class Week extends Component {
     //e.gg this.isBetween(10-24-2019) this.state.checkIn = 10-15-2019 this.state.checkOut = 10-30-2019 [10,24,2019]
     let checkIn = new Date(checkInArray[2], checkInArray[0]-1, checkInArray[1]);
     let checkOut = new Date(checkOutArray[2], checkOutArray[0]-1, checkOutArray[1]);
-    let between = new Date(dateArray[2], dateArray[0]-1, dateArray[1]);
+    let between;
+
+    if(dateArray[0]-1 < 12){
+      between = new Date(dateArray[2], dateArray[0]-1, dateArray[1]);
+    }
+    else{
+      between = new Date(dateArray[2], dateArray[0]-13, dateArray[1]);
+    }
+    console.log(dateArray[0], dateArray[1], dateArray[2]);
 
     if(checkIn <= between && checkOut >= between){
       return true;
