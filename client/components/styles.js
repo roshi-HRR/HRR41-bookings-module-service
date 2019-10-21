@@ -96,6 +96,11 @@ const styles = {
     fontWeight: 'bold',
     fontFamily: 'sans-serif',
     color: 'white'
+  },
+  row: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-between'
   }
 }
 

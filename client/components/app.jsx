@@ -19,11 +19,13 @@ class App extends React.Component {
       unavailableDates: [],
       cleaning: null,
       service: null,
-      taxes: null
+      taxes: null,
+      total: null
     }
 
     this.getDate = this.getDate.bind(this);
     this.canCheckOut = this.canCheckOut.bind(this);
+    this.setTotal = this.setTotal.bind(this);
   }
 
   async componentDidMount() {
@@ -88,6 +90,12 @@ class App extends React.Component {
     console.log("check-in ", this.state.checkIn, "check-out", this.state.checkOut);
   }
 
+  setTotal(number){
+    this.setState({
+      total: number
+    })
+  }
+
   render() {
     return (
       <div style={styles.appStyle}>
@@ -96,7 +104,7 @@ class App extends React.Component {
         <Dates unavailableDates={this.state.unavailableDates} checkIn={this.state.checkIn} checkOut={this.state.checkOut} getDate={this.getDate}/>
         <Guests />
         <Line/>
-        {this.state.checkIn !== '' && this.state.checkOut !== '' ? <Info cleaning={this.state.cleaning} service={this.state.service} taxes={this.state.taxes}/> : ''}
+        {this.state.checkIn !== '' && this.state.checkOut !== '' ? <Info total={this.state.total} setTotal={this.setTotal} initial={this.state.cost} checkIn={this.state.checkIn} checkOut={this.state.checkOut} cleaning={this.state.cleaning} service={this.state.service} taxes={this.state.taxes}/> : ''}
         <ReserveButton />
       </div>
     )
