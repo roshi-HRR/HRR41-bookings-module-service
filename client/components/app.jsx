@@ -15,7 +15,8 @@ class App extends React.Component {
     this.state = {
       cost: 0,
       checkIn: '',
-      checkOut: ''
+      checkOut: '',
+      unavailableDates: []
     }
 
     this.getDate = this.getDate.bind(this);
@@ -29,8 +30,9 @@ class App extends React.Component {
     let random = Math.floor(Math.random() * 100);
 
     this.setState({
-      cost: house.data[random].initialPrice
-    })
+      cost: house.data[random].initialPrice,
+      unavailableDates: house.data[random].unavailable_dates
+    });
   }
 
   canCheckOut(checkIn, checkOut){
@@ -85,7 +87,7 @@ class App extends React.Component {
       <div style={styles.appStyle}>
         <Cost initial={this.state.cost} />
         <Line />
-        <Dates checkIn={this.state.checkIn} checkOut={this.state.checkOut} getDate={this.getDate}/>
+        <Dates unavailableDates={this.state.unavailableDates} checkIn={this.state.checkIn} checkOut={this.state.checkOut} getDate={this.getDate}/>
         <Guests />
         <Line/>
         <ReserveButton />

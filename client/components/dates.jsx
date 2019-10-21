@@ -46,15 +46,15 @@ class Dates extends Component {
           <span style={styles.fontStyleSmall}>Dates</span>
         </div>
         <div style={styles.selectBox}>
-          <p onClick={this.toggleFirstCalendar} style={styles.selectBoxText}>Check-in</p>
+          <p onClick={this.toggleFirstCalendar} style={styles.selectBoxText}>{this.props.checkIn === '' ? 'Check-in' : this.props.checkIn}</p>
           <span style={styles.arrow}>→</span>
-          <p onClick={this.toggleSecondCalendar} style={styles.selectBoxText}>Check-out</p>
+          <p onClick={this.toggleSecondCalendar} style={styles.selectBoxText}>{this.props.checkOut === '' ? 'Checkout' : this.props.checkOut}</p>
         </div>
           <div style={{position: 'absolute', left: '27px'}}>
-            {this.state.toggledFirst ? <Calendar checkIn={this.props.checkIn} checkOut={this.props.checkOut} calType={'check-in'} getDate={this.props.getDate} /> : ''}
+            {this.state.toggledFirst ? <Calendar unavailableDates={this.props.unavailableDates} checkIn={this.props.checkIn} checkOut={this.props.checkOut} calType={'check-in'} getDate={this.props.getDate} /> : ''}
           </div>
           <div style={{position: 'absolute', left: '123px'}}>
-          {this.state.toggledSecond ? <Calendar checkIn={this.props.checkIn} checkOut={this.props.checkOut} calType={'check-out'} getDate={this.props.getDate} /> : ''}
+          {this.state.toggledSecond ? <Calendar unavailableDates={this.props.unavailableDates} checkIn={this.props.checkIn} checkOut={this.props.checkOut} calType={'check-out'} getDate={this.props.getDate} /> : ''}
           </div>
       </div>
     )
