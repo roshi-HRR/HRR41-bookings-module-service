@@ -20,6 +20,7 @@ class Guests extends Component {
     this.decreaseChildren = this.decreaseChildren.bind(this);
     this.increaseInfants = this.increaseInfants.bind(this);
     this.decreaseInfants = this.decreaseInfants.bind(this);
+    this.getTotal = this.getTotal.bind(this);
   }
 
   showDropDown() {
@@ -70,6 +71,10 @@ class Guests extends Component {
     }
   }
 
+  getTotal() {
+    return this.state.adults + this.state.children + this.state.infants;
+  }
+
   render() {
     return (
       <div>
@@ -77,7 +82,7 @@ class Guests extends Component {
           <span style={styles.fontStyleSmall}>Guests</span>
         </div>
         <div onClick={this.showDropDown} style={styles.selectBoxGuest}>
-          <p style={styles.selectBoxText}>1 Guest</p>
+          <p style={styles.selectBoxText}>{this.getTotal()} {this.getTotal() > 1 ? 'guests' : 'guest'}</p>
           <p style={styles.selectBoxText}>˅</p>
         </div>
       {this.state.toggled ? <DropDown

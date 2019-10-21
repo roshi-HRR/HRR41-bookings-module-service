@@ -5,7 +5,7 @@ const guestStyles = {
     borderStyle: 'solid',
     borderColor: '#EBEBEB',
     backgroundColor: 'white',
-    position: 'absolute',
+    position: 'relative',
     borderWidth: 'thin',
     marginLeft: '25px',
     zIndex: 3

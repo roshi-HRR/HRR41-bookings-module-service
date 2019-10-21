@@ -6,6 +6,7 @@ import Line from './line.jsx';
 import Dates from './dates.jsx';
 import Guests from './guests.jsx';
 import ReserveButton from './reserve.jsx';
+import Info from './info.jsx';
 
 class App extends React.Component {
   constructor(props) {
@@ -24,7 +25,7 @@ class App extends React.Component {
   async componentDidMount() {
     let house = await axios.get('/api/houses');
 
-    //just randomizing the house atm
+    //just randomizing the house at the moment
     let random = Math.floor(Math.random() * 100);
 
     this.setState({
@@ -86,6 +87,7 @@ class App extends React.Component {
         <Line />
         <Dates checkIn={this.state.checkIn} checkOut={this.state.checkOut} getDate={this.getDate}/>
         <Guests />
+        <Line/>
         <ReserveButton />
       </div>
     )

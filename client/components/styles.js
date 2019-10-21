@@ -1,13 +1,14 @@
 const styles = {
   appStyle: {
-    height: '539px',
-    width: '376px',
+    overflow: 'hidden',
+    height: 'auto',
     borderStyle: 'solid',
     borderColor: '#EBEBEB',
     position: 'absolute',
     right: '20px',
     top: '50px',
-    borderWidth: 'thin'
+    borderWidth: 'thin',
+    paddingRight: '20px'
   },
   fontStyleLarge: {
     position: 'absolute',
@@ -53,7 +54,7 @@ const styles = {
   arrow:{
     display: 'block',
     fontSize: '35px',
-    textAlign: 'center',
+    textAlign: 'center'
   },
   selectBoxText: {
     fontSize: '18px',
@@ -65,7 +66,7 @@ const styles = {
   selectBoxGuest: {
     position: 'relative',
     width: '324px',
-    height: '40px',
+    height: '39px',
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'space-around',
@@ -83,16 +84,16 @@ const styles = {
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'space-around',
-    borderStyle: 'solid',
-    backgroundColor: 'red',
+    backgroundColor: 'rgb(255, 90, 95)',
     marginLeft: '25px',
     marginTop: '80px',
     paddingBottom: '10px',
-    borderRadius: '10%'
+    borderRadius: '3%',
+    top: '-40'
   },
   buttonText: {
     fontSize: '18px',
-    fontWeight: 50,
+    fontWeight: 'bold',
     fontFamily: 'sans-serif',
     color: 'white'
   }

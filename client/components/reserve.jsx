@@ -1,12 +1,12 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import styles from './styles.js';
 
 class ReserveButton extends Component {
-  constructor(props){
+  constructor(props) {
     super(props);
   }
 
-  render(){
+  render() {
     return (
       <div style={styles.buttonUnpushed}>
         <p style={styles.buttonText}>Reserve</p>
