@@ -57,7 +57,7 @@ class App extends React.Component {
     let checkInDate = new Date(yearCheckIn, monthCheckIn-1, dayCheckIn);
     let checkOutDate = new Date(yearCheckOut, monthCheckOut-1, dayCheckOut);
 
-    if(checkOutDate > checkInDate){
+    if(checkOutDate > checkInDate && !(checkInDate > checkOutDate)){
       return true;
     }
     else{
