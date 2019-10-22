@@ -65,6 +65,7 @@
     line-height: 1.375em !important;
     color: rgb(72, 72, 72) !important;
     margin: 0px !important;
+    user-select: none;
   }
   .table-cell-left {
     display: table-cell !important;
