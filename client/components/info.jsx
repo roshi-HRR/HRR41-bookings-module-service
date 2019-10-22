@@ -26,23 +26,23 @@ class Info extends Component {
   render(){
     return (
       <div className="position">
-        <div className="row">
+        <div className="row-text">
           <p className="font-style-small">${this.props.initial} X {this.datesBetween()} Nights</p>
           <p className="font-style-small">${this.props.initial * this.datesBetween()}</p>
         </div>
-        <div className="row">
+        <div className="row-text">
           <p className="font-style-small">Cleaning Fee</p>
           <p className="font-style-small">${this.props.cleaning}</p>
         </div>
-        <div className="row">
+        <div className="row-text">
           <p className="font-style-small">Service Fee</p>
           <p className="font-style-small">${this.props.service}</p>
         </div>
-        <div className="row">
+        <div className="row-text">
           <p className="font-style-small">Occupancy Taxes and Fees</p>
           <p className="font-style-small">${this.props.taxes}</p>
         </div>
-        <div className="row">
+        <div className="row-text">
           <p className="font-style-small">Total</p>
           <p className="font-style-small">${this.props.initial * this.datesBetween() + this.props.service + this.props.cleaning + this.props.taxes}</p>
         </div>

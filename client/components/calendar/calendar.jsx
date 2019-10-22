@@ -96,7 +96,11 @@ class Calendar extends Component {
 
     return (
       <div className="main">
-        <p className="month-text">{this.state.month} {this.state.year}</p>
+        <div className="row">
+          <button className="button-left" onClick={this.dateLeft}>←</button>
+          <strong>{this.state.month} {this.state.year}</strong>
+          <button className="button-right" onClick={this.dateRight}>→</button>
+        </div>
         <table className="table">
           <tbody>
             <tr>
@@ -105,8 +109,6 @@ class Calendar extends Component {
             {this.state.weeks.map((week, i) => <Week unavailableDates={this.props.unavailableDates} checkIn={this.props.checkIn} checkOut={this.props.checkOut} calType={this.props.calType} getDate={this.props.getDate} key={i} dates={week} incrementMonth={this.state.incrementMonth} />)}
           </tbody>
         </table>
-        <button onClick={this.dateLeft}>previous</button>
-        <button onClick={this.dateRight}>next</button>
       </div>
     )
   }

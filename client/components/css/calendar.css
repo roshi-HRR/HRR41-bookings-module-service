@@ -8,6 +8,18 @@
     border-width: thin;
     z-index: 4;
   }
+  .row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    color: rgb(72, 72, 72) !important;
+    font-size: 18px !important;
+    text-align: center !important;
+    padding-top: 22px !important;
+    padding-bottom: 37px !important;
+    caption-side: initial !important;
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif !important;
+  }
   .calendar-text {
     box-sizing: border-box !important;
     cursor: pointer !important;
@@ -70,10 +82,41 @@
       font-size: 14px !important;
       color: rgb(255, 255, 255) !important;
   }
-
   .table {
       border-collapse: collapse !important;
       border-spacing: 0px !important;
       -webkit-border-horizontal-spacing: 0px !important;
       -webkit-border-vertical-spacing: 0px !important;
+  }
+  .button-right {
+    cursor: pointer !important;
+    user-select: none !important;
+    background-color: rgb(255, 255, 255) !important;
+    color: rgb(117, 117, 117) !important;
+    top: 18px !important;
+    line-height: 0.78 !important;
+    right: 22px !important;
+    margin: 0px !important;
+    border-width: 1px !important;
+    border-style: solid !important;
+    border-color: rgb(228, 231, 231) !important;
+    border-image: initial !important;
+    border-radius: 3px !important;
+    padding: 6px 9px !important;
+  }
+  .button-left {
+    cursor: pointer !important;
+    user-select: none !important;
+    background-color: rgb(255, 255, 255) !important;
+    color: rgb(117, 117, 117) !important;
+    top: 18px !important;
+    line-height: 0.78 !important;
+    left: 22px !important;
+    margin: 0px !important;
+    border-width: 1px !important;
+    border-style: solid !important;
+    border-color: rgb(228, 231, 231) !important;
+    border-image: initial !important;
+    border-radius: 3px !important;
+    padding: 6px 9px !important;
   }

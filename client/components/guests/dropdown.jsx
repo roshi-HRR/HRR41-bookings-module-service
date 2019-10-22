@@ -17,21 +17,21 @@ class Dropdown extends Component {
       <div className="main-drop-down column-wrapper">
         <div className="row-wrapper">
           <p className="guest-text">Adults</p>
-          <div onClick={this.props.decreaseAdults} className="circle">-</div>
+          <div onClick={this.props.decreaseAdults} className="circle"><span className="number">-</span></div>
           <p className="guest-text">{this.props.adults}</p>
-          <div onClick={this.props.increaseAdults} className="circle">+</div>
+          <div onClick={this.props.increaseAdults} className="circle"><span className="number">+</span></div>
         </div>
         <div className="row-wrapper">
           <p className="guest-text">Children</p>
-          <div onClick={this.props.decreaseChildren} className="circle">-</div>
+          <div onClick={this.props.decreaseChildren} className="circle"><span className="number">-</span></div>
           <p className="guest-text">{this.props.children}</p>
-          <div onClick={this.props.increaseChildren} className="circle">+</div>
+          <div onClick={this.props.increaseChildren} className="circle"><span className="number">+</span></div>
         </div>
         <div className="row-wrapper">
           <p className="guest-text">Infants</p>
-          <div onClick={this.props.decreaseInfants} className="circle">-</div>
+          <div onClick={this.props.decreaseInfants} className="circle"><span className="number">-</span></div>
           <p className="guest-text">{this.props.infants}</p>
-          <div onClick={this.props.increaseInfants} className="circle">+</div>
+          <div onClick={this.props.increaseInfants} className="circle"><span className="number">+</span></div>
         </div>
       </div>
     )

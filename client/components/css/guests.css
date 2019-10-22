@@ -28,15 +28,51 @@
     margin-left: 10px;
   }
   .circle {
-    border-style: solid;
-    border-radius: 50%;
-    height: 20px;
-    width: 20px;
-    text-align: center;
-    font-size: 16px;
-    font-weight: 50;
-    font-family: sans-serif;
-    color: #484848;
-    user-select: none;
-    margin-left: 10px;
+    display: inline-block !important;
+    cursor: pointer !important;
+    text-align: center !important;
+    line-height: 1 !important;
+    position: relative !important;
+    touch-action: manipulation !important;
+    height: 32px !important;
+    width: 32px !important;
+    box-shadow: none !important;
+    border-radius: 50% !important;
+    border-style: solid !important;
+    border-color: rgb(0, 132, 137) !important;
+    background: transparent !important;
+    border-width: 1px !important;
+  }
+  .table {
+    display: table !important;
+    width: 100% !important;
+    border-spacing: 0px !important;
+  }
+  .table-left {
+    display: table-cell !important;
+    width: 100% !important;
+    vertical-align: middle !important;
+  }
+  .table-right {
+    display: table-cell !important;
+    vertical-align: middle !important;
+  }
+  .number {
+    overflow-wrap: break-word !important;
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif !important;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    line-height: 1.375em !important;
+    color: rgb(72, 72, 72) !important;
+    margin: 0px !important;
+  }
+  .table-cell-left {
+    display: table-cell !important;
+    vertical-align: middle !important;
+    text-align: left !important;
+  }
+  .table-cell-right {
+    display: table-cell !important;
+    vertical-align: middle !important;
+    text-align: right !important;
   }
