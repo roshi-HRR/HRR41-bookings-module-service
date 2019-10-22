@@ -120,3 +120,12 @@
     border-radius: 3px !important;
     padding: 6px 9px !important;
   }
+  .date-clicked {
+    white-space: nowrap !important;
+    color: rgb(0, 122, 135) !important;
+    padding: 0px 6px !important;
+    overflow: hidden !important;
+    background: rgb(153, 237, 230) !important;
+    border-color: rgb(153, 237, 230) !important;
+    border-radius: 3px !important;
+  }

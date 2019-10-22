@@ -46,9 +46,13 @@ class Dates extends Component {
           <span className="font-style-small">Dates</span>
         </div>
         <div className="select-box">
-          <p onClick={this.toggleFirstCalendar} className="select-box-text">{this.props.checkIn === '' ? 'Check-in' : this.props.checkIn}</p>
+          <div className={this.state.toggledFirst ? "date-selected" : ''}>
+            <p onClick={this.toggleFirstCalendar} className="select-box-text">{this.props.checkIn === '' ? 'Check-in' : this.props.checkIn}</p>
+          </div>
           <span className="arrow">→</span>
-          <p onClick={this.toggleSecondCalendar} className="select-box-text">{this.props.checkOut === '' ? 'Checkout' : this.props.checkOut}</p>
+          <div className={this.state.toggledSecond ? 'date-selected': ''}>
+            <p onClick={this.toggleSecondCalendar} className="select-box-text">{this.props.checkOut === '' ? 'Checkout' : this.props.checkOut}</p>
+          </div>
         </div>
           <div style={{position: 'absolute', left: '27px'}}>
             {this.state.toggledFirst ? <Calendar unavailableDates={this.props.unavailableDates} checkIn={this.props.checkIn} checkOut={this.props.checkOut} calType={'check-in'} getDate={this.props.getDate} /> : ''}
