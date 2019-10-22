@@ -24,7 +24,7 @@ class App extends React.Component {
     }
 
     this.getDate = this.getDate.bind(this);
-    this.canCheckOut = this.canCheckOut.bind(this);
+    this.canCheckOutOrIn = this.canCheckOutOrIn.bind(this);
     this.setTotal = this.setTotal.bind(this);
   }
 
@@ -43,7 +43,7 @@ class App extends React.Component {
     });
   }
 
-  canCheckOut(checkIn, checkOut){
+  canCheckOutOrIn(checkIn, checkOut){
     let checkInArray = checkIn.split('-');
     let monthCheckIn = checkInArray[0];
     let dayCheckIn = checkInArray[1];
@@ -57,7 +57,7 @@ class App extends React.Component {
     let checkInDate = new Date(yearCheckIn, monthCheckIn-1, dayCheckIn);
     let checkOutDate = new Date(yearCheckOut, monthCheckOut-1, dayCheckOut);
 
-    if(checkOutDate > checkInDate && !(checkInDate > checkOutDate)){
+    if(checkOutDate > checkInDate){
       return true;
     }
     else{
@@ -76,12 +76,17 @@ class App extends React.Component {
       fixedMonth = month;
     }
 
-    if(calType === 'check-in'){
+    if(calType === 'check-in' && this.state.checkOut === ''){
       await this.setState({
         checkIn: fixedMonth + '-' + day + '-' + year
       })
     }
-    else if(calType === 'check-out' && this.canCheckOut(this.state.checkIn, fixedMonth + '-' + day + '-' + year)){
+    else if(calType === 'check-in' && this.state.checkOut !== '' && this.canCheckOutOrIn(fixedMonth + '-' + day + '-' + year, this.state.checkOut)){
+      await this.setState({
+        checkIn: fixedMonth + '-' + day + '-' + year
+      })
+    }
+    else if(calType === 'check-out' && this.canCheckOutOrIn(this.state.checkIn, fixedMonth + '-' + day + '-' + year)){
       await this.setState({
         checkOut: fixedMonth + '-' + day + '-' + year
       })
