@@ -1,0 +1,116 @@
+  .app-style {
+    height: auto;
+    border-style: solid;
+    border-color: #EBEBEB;
+    position: absolute;
+    right: 20px;
+    top: 50px;
+    border-width: thin;
+    padding-right: 20px;
+  }
+  .font-style-large {
+    position: absolute;
+    font-size: 22px;
+    font-family: sans-serif;
+    font-weight: 800;
+    padding-left: 25px;
+    padding-top: 18px;
+    color: #484848;
+  }
+  .font-style-small{
+    position: relative;
+    font-size: 12px;
+    font-family: sans-serif;
+    font-weight: 800;
+    /* padding-top: 18px; */
+    color: #484848;
+  }
+  .line{
+    position: static;
+    margin-top: 60px;
+    width: 80%;
+    border: .5px solid #EBEBEB;
+  }
+  .position {
+    padding-left: 25px;
+    padding-top: 20px;
+  }
+  .select-box {
+    position: relative;
+    width: 324px;
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    border-style: solid;
+    border-color: #EBEBEB;
+    border-width: thin;
+    margin-left: 25px;
+    margin-top: 20px;
+    padding-bottom: 10px;
+    padding-top:10px;
+  }
+  .arrow {
+    display: block;
+    font-size: 35px;
+    text-align: center;
+  }
+  .select-box-text {
+    font-size: 18px;
+    font-weight: 50;
+    font-family: sans-serif;
+    color: #484848;
+    user-select: none;
+  }
+  .select-box-guest {
+    position: relative;
+    width: 324px;
+    height: 39px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    border-style: solid;
+    border-color: #EBEBEB;
+    border-width: thin;
+    margin-left: 25px;
+    margin-top: 20px;
+    padding-bottom: 10px;
+  }
+  .button-unpushed {
+    position: relative;
+    width: 324px;
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: rgb(255, 90, 95);
+    margin-left: 25px;
+    margin-top: 80px;
+    padding-bottom: 10px;
+    border-radius: 3%;
+    top: -40;
+    user-select: none;
+  }
+  .button-text {
+    font-size: 18px;
+    font-weight: bold;
+    font-family: sans-serif;
+    color: white;
+  }
+  .row-text {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .date-selected {
+    text-align: center;
+    white-space: nowrap !important;
+    color: rgb(0, 122, 135) !important;
+    padding-bottom:10px  !important;
+    overflow: hidden !important;
+    background: rgb(153, 237, 230) !important;
+    border-color: rgb(153, 237, 230) !important;
+    border-radius: 3px !important;
+    padding-right: 5px;
+    padding-left: 5px;
+  }

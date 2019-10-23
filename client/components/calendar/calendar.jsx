@@ -1,11 +1,11 @@
-import React, {Component} from 'react';
-import Styles from './styles.js';
+import React, { Component } from 'react';
 import moment from 'moment';
+import '../css/calendar.css';
 
 import Week from './week.jsx';
 
 class Calendar extends Component {
-  constructor(props){
+  constructor(props) {
     super(props);
 
     this.state = {
@@ -13,7 +13,7 @@ class Calendar extends Component {
       weeks: [],
       month: '',
       year: moment().month(moment().month()).format('YYYY'),
-      incrementMonth: 0
+      incrementMonth: 0,
     }
 
     this.dateRight = this.dateRight.bind(this);
@@ -21,11 +21,11 @@ class Calendar extends Component {
     this.renderWeeks = this.renderWeeks.bind(this);
   }
 
-  componentDidMount(){
+  componentDidMount() {
     this.renderWeeks(moment().month());
   }
 
-  async dateRight(){
+  async dateRight() {
     await this.setState({
       incrementMonth: this.state.incrementMonth + 1
     })
@@ -37,7 +37,7 @@ class Calendar extends Component {
     this.renderWeeks(moment().month() + this.state.incrementMonth);
   }
 
-  async dateLeft(){
+  async dateLeft() {
     await this.setState({
       incrementMonth: this.state.incrementMonth - 1
     })
@@ -57,11 +57,11 @@ class Calendar extends Component {
     //create first array with appropriate amount of empty strings
     let week = [];
 
-    for(let i=0; i<startOfMonthDay; i++){
+    for (let i = 0; i < startOfMonthDay; i++) {
       week.push('');
     }
 
-    for(let i=1; i<=7-startOfMonthDay; i++){
+    for (let i = 1; i <= 7 - startOfMonthDay; i++) {
       week.push(i);
     }
 
@@ -70,12 +70,12 @@ class Calendar extends Component {
     let count = 0;
     week = [];
 
-    for(let i=8-startOfMonthDay; i<=daysInMonth; i++){
+    for (let i = 8 - startOfMonthDay; i <= daysInMonth; i++) {
       count++;
 
       week.push(i);
 
-      if(count === 7){
+      if (count === 7) {
         month.push(week);
         week = [];
         count = 0;
@@ -91,23 +91,24 @@ class Calendar extends Component {
     })
   }
 
-  render(){
-    let weeksArray = ['sun', 'mon', 'tue', 'wed', 'thurs', 'fri', 'sat'];
+  render() {
+    let weeksArray = ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'];
 
     return (
-      <div style={Styles.main}>
-        <p style={Styles.monthText}>{this.state.month}</p>
-        <p style={Styles.yearText}>{this.state.year}</p>
-        <table>
+      <div className="main">
+        <div className="row">
+          <button className="button-left" onClick={this.dateLeft}>←</button>
+          <strong>{this.state.month} {this.state.year}</strong>
+          <button className="button-right" onClick={this.dateRight}>→</button>
+        </div>
+        <table className="table">
           <tbody>
             <tr>
-              {weeksArray.map((day, i) => <td key={i} style={Styles.calendarText}>{day}</td>)}
+              {weeksArray.map((day, i) => <td key={i} className="calendar-text">{day}</td>)}
             </tr>
-            {this.state.weeks.map((week, i) => <Week key={i} dates={week} incrementMonth={this.state.incrementMonth}/>)}
+            {this.state.weeks.map((week, i) => <Week unavailableDates={this.props.unavailableDates} checkIn={this.props.checkIn} checkOut={this.props.checkOut} calType={this.props.calType} getDate={this.props.getDate} key={i} dates={week} incrementMonth={this.state.incrementMonth} />)}
           </tbody>
         </table>
-        <button onClick={this.dateLeft}>previous</button>
-        <button onClick={this.dateRight}>next</button>
       </div>
     )
   }

@@ -1,13 +1,13 @@
-import React, {Component} from 'react';
-import styles from './styles.js';
+import React, { Component } from 'react';
+import './css/app.css';
 import Calendar from './calendar/calendar.jsx';
 
 class Dates extends Component {
-  constructor(props){
+  constructor(props) {
     super(props);
 
     this.state = {
-      toggledFirst:false,
+      toggledFirst: false,
       toggledSecond: false
     }
 
@@ -18,30 +18,48 @@ class Dates extends Component {
   //can use spread operator to use more than one style
 
   toggleFirstCalendar() {
+    if(this.state.toggledSecond === true){
+      this.setState({
+        toggledSecond: false
+      })
+    }
     this.setState({
       toggledFirst: !this.state.toggledFirst
     })
   }
 
   toggleSecondCalendar() {
+    if(this.state.toggledFirst === true){
+      this.setState({
+        toggledFirst: false
+      })
+    }
     this.setState({
       toggledSecond: !this.state.toggledSecond
     })
   }
 
-  render(){
+  render() {
     return (
       <div>
-        <div style={styles.position}>
-          <span style={styles.fontStyleSmall}>Dates</span>
+        <div className="position">
+          <span className="font-style-small">Dates</span>
         </div>
-        <div style={styles.selectBox}>
-            <p onClick ={this.toggleFirstCalendar} style={styles.selectBoxText}>Check-in</p>
-            {this.state.toggledFirst ? <Calendar/> : ''}
-            <span style={styles.arrow}>→</span>
-            <p onClick = {this.toggleSecondCalendar} style={styles.selectBoxText}>Check-out</p>
-            {this.state.toggledSecond ? <Calendar/> : ''}
+        <div className="select-box">
+          <div className={this.state.toggledFirst ? "date-selected" : ''}>
+            <p onClick={this.toggleFirstCalendar} className="select-box-text">{this.props.checkIn === '' ? 'Check-in' : this.props.checkIn}</p>
+          </div>
+          <span className="arrow">→</span>
+          <div className={this.state.toggledSecond ? 'date-selected': ''}>
+            <p onClick={this.toggleSecondCalendar} className="select-box-text">{this.props.checkOut === '' ? 'Checkout' : this.props.checkOut}</p>
+          </div>
         </div>
+          <div style={{position: 'absolute', left: '27px'}}>
+            {this.state.toggledFirst ? <Calendar unavailableDates={this.props.unavailableDates} checkIn={this.props.checkIn} checkOut={this.props.checkOut} calType={'check-in'} getDate={this.props.getDate} /> : ''}
+          </div>
+          <div style={{position: 'absolute', left: '27px'}}>
+          {this.state.toggledSecond ? <Calendar unavailableDates={this.props.unavailableDates} checkIn={this.props.checkIn} checkOut={this.props.checkOut} calType={'check-out'} getDate={this.props.getDate} /> : ''}
+          </div>
       </div>
     )
   }

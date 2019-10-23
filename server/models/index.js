@@ -8,6 +8,9 @@ const connect = mongoose.connect('mongodb://localhost/booking', {
 let hotelSchema = mongoose.Schema({
   name: String,
   initialPrice: Number,
+  cleaning: Number,
+  service: Number,
+  taxes: Number,
   unavailable_dates: Array,
   price_per_guest: Object
 });
@@ -41,8 +44,8 @@ let getUsers = (callback) => {
 //right now, we're just posting the dates that are unavailable when someone books a house since there's currently no authentication
 
 
-let saveHouse = (name, initialPrice, unavailableDates, pricePerGuest) => {
-  const hotel = new Hotel({name: name, initialPrice: initialPrice, unavailable_dates: unavailableDates, price_per_guest: pricePerGuest});
+let saveHouse = (name, initialPrice, cleaning, service, taxes, unavailableDates, pricePerGuest) => {
+  const hotel = new Hotel({name: name, initialPrice: initialPrice, cleaning: cleaning, service: service, taxes: taxes, unavailable_dates: unavailableDates, price_per_guest: pricePerGuest});
 
   hotel.save(err => {
     if(!err){
