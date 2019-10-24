@@ -29,17 +29,18 @@ class App extends React.Component {
   }
 
   async componentDidMount() {
-    const house = await axios.get('/api/houses');
+    const url = new URL(window.location.href);
+    const houseId = url.searchParams.get('house_id');
+    const request = await axios.get(`/api/houses/${houseId}`);
+    const house = request.data[0];
 
-    // just randomizing the house at the moment
-    const random = Math.floor(Math.random() * 100);
-
+    console.log(house);
     this.setState({
-      cost: house.data[random].initialPrice,
-      unavailableDates: house.data[random].unavailable_dates,
-      cleaning: house.data[random].cleaning,
-      service: house.data[random].service,
-      taxes: house.data[random].taxes,
+      cost: house.initialPrice,
+      unavailableDates: house.unavailable_dates,
+      cleaning: house.cleaning,
+      service: house.service,
+      taxes: house.taxes,
     });
   }
 
