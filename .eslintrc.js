@@ -6,5 +6,16 @@
  */
 
 module.exports = {
-  extends: './node_modules/eslint-config-airbnb/index.js'
+  env: {
+    browser: true,
+    es6: true
+  },
+  extends: ['airbnb'],
+  parserOptions: {
+    ecmaFeatures: {
+      jsx: true
+    },
+    ecmaVersion: 2018,
+    souceType: 'module'
+  }
 };

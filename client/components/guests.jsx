@@ -10,8 +10,8 @@ class Guests extends Component {
       toggled: false,
       adults: 1,
       children: 0,
-      infants: 0
-    }
+      infants: 0,
+    };
 
     this.showDropDown = this.showDropDown.bind(this);
     this.increaseAdults = this.increaseAdults.bind(this);
@@ -23,56 +23,56 @@ class Guests extends Component {
     this.getTotal = this.getTotal.bind(this);
   }
 
+  getTotal() {
+    return this.state.adults + this.state.children + this.state.infants;
+  }
+
   showDropDown() {
     this.setState({
-      toggled: !this.state.toggled
-    })
+      toggled: !this.state.toggled,
+    });
   }
 
   increaseAdults() {
     this.setState({
-      adults: this.state.adults+1
-    })
+      adults: this.state.adults + 1,
+    });
   }
 
   decreaseAdults() {
-    if(this.state.adults > 1){
+    if (this.state.adults > 1) {
       this.setState({
-        adults: this.state.adults-1
-      })
+        adults: this.state.adults - 1,
+      });
     }
   }
 
   increaseChildren() {
     this.setState({
-      children: this.state.children+1
-    })
+      children: this.state.children + 1,
+    });
   }
 
   decreaseChildren() {
-    if(this.state.children > 0){
+    if (this.state.children > 0) {
       this.setState({
-        children: this.state.children-1
-      })
+        children: this.state.children - 1,
+      });
     }
   }
 
   increaseInfants() {
     this.setState({
-      infants: this.state.infants+1
-    })
+      infants: this.state.infants + 1,
+    });
   }
 
-  decreaseInfants(){
-    if(this.state.infants > 0){
+  decreaseInfants() {
+    if (this.state.infants > 0) {
       this.setState({
-        infants: this.state.infants-1
-      })
+        infants: this.state.infants - 1,
+      });
     }
-  }
-
-  getTotal() {
-    return this.state.adults + this.state.children + this.state.infants;
   }
 
   render() {
@@ -82,21 +82,28 @@ class Guests extends Component {
           <span className="font-style-small">Guests</span>
         </div>
         <div onClick={this.showDropDown} className="select-box-guest">
-          <p className="select-box-text">{this.getTotal()} {this.getTotal() > 1 ? 'guests' : 'guest'}</p>
+          <p className="select-box-text">
+            {this.getTotal()}
+            {' '}
+            {this.getTotal() > 1 ? 'guests' : 'guest'}
+          </p>
           <p className="select-box-text">{this.state.toggled ? 'Λ' : 'V'}</p>
         </div>
-      {this.state.toggled ? <DropDown
-        increaseAdults={this.increaseAdults}
-        decreaseAdults={this.decreaseAdults}
-        increaseChildren={this.increaseChildren}
-        decreaseChildren={this.decreaseChildren}
-        increaseInfants={this.increaseInfants}
-        decreaseInfants={this.decreaseInfants}
-        adults={this.state.adults}
-        children={this.state.children}
-        infants={this.state.infants} /> : ''}
+        {this.state.toggled ? (
+          <DropDown
+            increaseAdults={this.increaseAdults}
+            decreaseAdults={this.decreaseAdults}
+            increaseChildren={this.increaseChildren}
+            decreaseChildren={this.decreaseChildren}
+            increaseInfants={this.increaseInfants}
+            decreaseInfants={this.decreaseInfants}
+            adults={this.state.adults}
+            children={this.state.children}
+            infants={this.state.infants}
+          />
+        ) : ''}
       </div>
-    )
+    );
   }
 }
 

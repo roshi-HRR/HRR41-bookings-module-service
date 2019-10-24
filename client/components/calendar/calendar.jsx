@@ -9,12 +9,11 @@ class Calendar extends Component {
     super(props);
 
     this.state = {
-      date: moment(),
       weeks: [],
       month: '',
       year: moment().month(moment().month()).format('YYYY'),
       incrementMonth: 0,
-    }
+    };
 
     this.dateRight = this.dateRight.bind(this);
     this.dateLeft = this.dateLeft.bind(this);
@@ -27,34 +26,34 @@ class Calendar extends Component {
 
   async dateRight() {
     await this.setState({
-      incrementMonth: this.state.incrementMonth + 1
-    })
+      incrementMonth: this.state.incrementMonth + 1,
+    });
 
     await this.setState({
-      year: moment().month(moment().month() + this.state.incrementMonth).format('YYYY')
-    })
+      year: moment().month(moment().month() + this.state.incrementMonth).format('YYYY'),
+    });
 
     this.renderWeeks(moment().month() + this.state.incrementMonth);
   }
 
   async dateLeft() {
     await this.setState({
-      incrementMonth: this.state.incrementMonth - 1
-    })
+      incrementMonth: this.state.incrementMonth - 1,
+    });
 
     await this.setState({
-      year: moment().month(moment().month() + this.state.incrementMonth).format('YYYY')
-    })
+      year: moment().month(moment().month() + this.state.incrementMonth).format('YYYY'),
+    });
 
     this.renderWeeks(moment().month() + this.state.incrementMonth);
   }
 
   renderWeeks(curMonth) {
-    let month = [];
-    let startOfMonthDay = moment().month(curMonth).startOf('month').format('d');
-    let daysInMonth = moment().month(curMonth).daysInMonth();
+    const month = [];
+    const startOfMonthDay = moment().month(curMonth).startOf('month').format('d');
+    const daysInMonth = moment().month(curMonth).daysInMonth();
 
-    //create first array with appropriate amount of empty strings
+    // create first array with appropriate amount of empty strings
     let week = [];
 
     for (let i = 0; i < startOfMonthDay; i++) {
@@ -84,21 +83,25 @@ class Calendar extends Component {
 
     month.push(week);
 
-    //push remaining weeks into month array
+    // push remaining weeks into month array
     this.setState({
       weeks: month,
       month: moment().month(curMonth).format('MMMM'),
-    })
+    });
   }
 
   render() {
-    let weeksArray = ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'];
+    const weeksArray = ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'];
 
     return (
       <div className="main">
         <div className="row">
           <button className="button-left" onClick={this.dateLeft}>←</button>
-          <strong>{this.state.month} {this.state.year}</strong>
+          <strong>
+            {this.state.month}
+            {' '}
+            {this.state.year}
+          </strong>
           <button className="button-right" onClick={this.dateRight}>→</button>
         </div>
         <table className="table">
@@ -110,7 +113,7 @@ class Calendar extends Component {
           </tbody>
         </table>
       </div>
-    )
+    );
   }
 }
 
