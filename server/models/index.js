@@ -2,83 +2,86 @@ const mongoose = require('mongoose');
 
 const connect = mongoose.connect('mongodb://localhost/booking', {
   useNewUrlParser: true,
-  useUnifiedTopology: true
-})
+  useUnifiedTopology: true,
+});
 
-let hotelSchema = mongoose.Schema({
+const hotelSchema = mongoose.Schema({
+  id: Number,
   name: String,
   initialPrice: Number,
   cleaning: Number,
   service: Number,
   taxes: Number,
   unavailable_dates: Array,
-  price_per_guest: Object
+  price_per_guest: Object,
 });
 
-let userSchema = mongoose.Schema({
+const userSchema = mongoose.Schema({
   name: String,
-  booked_hotels: [{hotel: hotelSchema, totalPrice: Number}]
+  booked_hotels: [{ hotel: hotelSchema, totalPrice: Number }],
 });
 
-let Hotel = mongoose.model('Hotel', hotelSchema);
-let User = mongoose.model('User', userSchema);
+const Hotel = mongoose.model('Hotel', hotelSchema);
+const User = mongoose.model('User', userSchema);
 
-let getHouses = (callback) => {
+const getHouses = (callback) => {
   Hotel.find({}, (err, docs) => {
     callback(err, docs);
-  })
-}
+  });
+};
 
-let getHouseById = (id, callback) => {
-  Hotel.find({_id: id}, (err, docs) => {
+const getHouseById = (id, callback) => {
+  Hotel.find({ id }, (err, docs) => {
     callback(err, docs);
-  })
-}
+  });
+};
 
-let getUsers = (callback) => {
+const getUsers = (callback) => {
   User.find({}, (err, docs) => {
     callback(err, docs);
-  })
-}
+  });
+};
 
-//right now, we're just posting the dates that are unavailable when someone books a house since there's currently no authentication
+// right now, we're just posting the dates that are unavailable when someone books a house since there's currently no authentication
 
 
-let saveHouse = (name, initialPrice, cleaning, service, taxes, unavailableDates, pricePerGuest) => {
-  const hotel = new Hotel({name: name, initialPrice: initialPrice, cleaning: cleaning, service: service, taxes: taxes, unavailable_dates: unavailableDates, price_per_guest: pricePerGuest});
+const saveHouse = (id, name, initialPrice, cleaning, service, taxes, unavailableDates, pricePerGuest) => {
+  const hotel = new Hotel({
+    id, name, initialPrice, cleaning, service, taxes, unavailable_dates: unavailableDates, price_per_guest: pricePerGuest,
+  });
 
-  hotel.save(err => {
-    if(!err){
-      console.log("success");
+  hotel.save((err) => {
+    if (!err) {
+      // eslint-disable-next-line
+      console.log('success');
+    } else {
+      console.log('failed');
     }
-    else{
-      console.log("failed");
-    }
-  })
-}
+  });
+};
 
-let saveUser = (name) => {
-  let user = new User({name: name, booked_hotels: []});
+const saveUser = (name) => {
+  const user = new User({ name, booked_hotels: [] });
 
-  user.save(err => {
-    if(!err){
-      console.log("saved new user without hotel");
+  user.save((err) => {
+    if (!err) {
+      console.log('saved new user without hotel');
     }
-  })
-}
+  });
+};
 
-let saveHotelToUser = (userName, houseName, totalPrice) => {
-  Hotel.find({name: houseName}, (err, docs) => {
-    if(!err){
-      console.log("success");
+const saveHotelToUser = (userName, houseName, totalPrice) => {
+  Hotel.find({ name: houseName }, (err, docs) => {
+    if (!err) {
+      console.log('success');
     }
-    User.updateOne({name: userName}, {$push: {booked_hotels: {hotel: docs, totalPrice: totalPrice}}}, (err, res) => {
-      if(!err){
-        console.log("success");
+    User.updateOne({ name: userName }, { $push: { booked_hotels: { hotel: docs, totalPrice } } }, (err, res) => {
+      if (!err) {
+        console.log('success');
       }
-    })
-  })
-}
+    });
+  });
+};
 
 module.exports.getUsers = getUsers;
 module.exports.saveHotelToUser = saveHotelToUser;
@@ -87,4 +90,4 @@ module.exports.getHouses = getHouses;
 module.exports.getHouseById = getHouseById;
 module.exports.saveHouse = saveHouse;
 
-//changed
+// changed

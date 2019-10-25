@@ -4,22 +4,23 @@ module.exports = {
   entry: './client/index.jsx',
   output: {
     path: path.resolve(__dirname, 'public'),
-    filename: 'booking.bundle.js'
+    filename: 'booking.bundle.js',
   },
   module: {
     rules: [
-      {test: /\.(js|jsx)$/,
+      {
+        test: /\.(js|jsx)$/,
         use: {
-        loader: 'babel-loader',
-        options: {
-          presets: ['@babel/preset-react', '@babel/preset-env']
-        }
-      }
-    },
-    {
-      test: /\.css$/,
-      use: ['style-loader', 'css-loader']
-    },
-  ]
-  }
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-react', '@babel/preset-env'],
+          },
+        },
+      },
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader'],
+      },
+    ],
+  },
 };
