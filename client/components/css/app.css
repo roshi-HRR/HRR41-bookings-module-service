@@ -2,7 +2,7 @@
     height: auto;
     border-style: solid;
     border-color: #EBEBEB;
-    position: sticky;
+    position: absolute;
     right: 20px;
     top: 50px;
     border-width: thin;
