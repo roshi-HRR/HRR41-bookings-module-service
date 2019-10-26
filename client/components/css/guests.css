@@ -1,0 +1,84 @@
+  .main-drop-down {
+    height: 300px;
+    width: 324px;
+    border-style: solid;
+    border-color: #EBEBEB;
+    background-color: white;
+    position: relative;
+    border-width: thin;
+    margin-left: 25px;
+    z-index: 3;
+  }
+  .column-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+  .row-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  .guest-text {
+    font-size: 16px;
+    font-weight: 50;
+    font-family: sans-serif;
+    color: #484848;
+    user-select: none;
+    margin-left: 10px;
+  }
+  .circle {
+    display: inline-block !important;
+    cursor: pointer !important;
+    text-align: center !important;
+    line-height: 1 !important;
+    position: relative !important;
+    touch-action: manipulation !important;
+    height: 32px !important;
+    width: 32px !important;
+    box-shadow: none !important;
+    border-radius: 50% !important;
+    border-style: solid !important;
+    border-color: rgb(0, 132, 137) !important;
+    background: transparent !important;
+    border-width: 1px !important;
+    padding-top: 5px;
+    padding-right:2.5px;
+    padding-left:2.5px;
+  }
+  .table {
+    display: table !important;
+    width: 100% !important;
+    border-spacing: 0px !important;
+  }
+  .table-left {
+    display: table-cell !important;
+    width: 100% !important;
+    vertical-align: middle !important;
+  }
+  .table-right {
+    display: table-cell !important;
+    vertical-align: middle !important;
+  }
+  .number {
+    overflow-wrap: break-word !important;
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif !important;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    line-height: 1.375em !important;
+    color: rgb(72, 72, 72) !important;
+    margin: 0px !important;
+    user-select: none;
+    vertical-align: middle;
+    display: inline-block;
+  }
+  .table-cell-left {
+    display: table-cell !important;
+    vertical-align: middle !important;
+    text-align: left !important;
+  }
+  .table-cell-right {
+    display: table-cell !important;
+    vertical-align: middle !important;
+    text-align: right !important;
+  }
