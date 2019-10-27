@@ -1,4 +1,5 @@
 const path = require('path');
+const CompressionPlugin = require('compression-webpack-plugin');
 
 module.exports = {
   entry: './client/index.jsx',
@@ -6,6 +7,9 @@ module.exports = {
     path: path.resolve(__dirname, 'public'),
     filename: 'booking.bundle.js',
   },
+  plugins: [new CompressionPlugin({
+    algorithm: 'gzip',
+  })],
   module: {
     rules: [
       {
