@@ -10,6 +10,7 @@
     "serve": "nodemon server/index.js",
     "seed": "node server/seed/index.js",
     "build": "webpack --watch --mode development",
+    "build-prod": "webpack --mode=production",
     "test": "jest --detectOpenHandles"
   },
   "dependencies": {
